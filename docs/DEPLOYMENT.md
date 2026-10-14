@@ -33,3 +33,7 @@ npm run start:prod:batch
 ```
 
 Do not wipe MongoDB or uploaded files. Local checks do not verify the target server/domain/HTTPS configuration; no remote deployment was performed.
+
+## Database selection
+
+Use a MongoDB URI targeting the `kidify` database. Changing the database path selects a different database; it does not rename or copy the previous database. Existing users, products and orders will not appear unless present in the selected database. Preserve credentials and connection options. No database migration was executed during source cleanup.

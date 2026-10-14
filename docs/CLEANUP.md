@@ -45,3 +45,7 @@ Eight unreferenced legacy alert exports and their unused Messages constants were
 - Frontend: all 14 regression test files and clean production build passed. Backend: all 14 suites / 140 tests, API build and batch build passed. Existing unrelated lint warnings remain.
 - Current project folders: `Kidify-next` and `Kidify`. Updated startup instructions are in `DEPLOYMENT.md`. Clean source archives exclude local secrets, dependencies, generated builds, Git metadata and user uploads.
 - No remote deployment or data migration was run.
+
+## Kidify source cleanup — 2026-10-14
+
+This update supersedes the earlier retention notes for database branding and unsupported categories. Development database branding is `kidify`; the optional account migration script is now `scripts/migrate-kidify.ts`. Unsupported categories and the obsolete notification reference were removed from active schemas. Comment and notification queries exclude unsupported historical categories. Existing database records, uploaded files and historical audit manifests remain unchanged. Database URI changes do not rename or copy databases.

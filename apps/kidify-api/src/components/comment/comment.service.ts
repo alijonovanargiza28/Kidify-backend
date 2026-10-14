@@ -88,14 +88,14 @@ export class CommentService {
 
     async likeComment(memberId: mongoose.Types.ObjectId, id: mongoose.Types.ObjectId) {
         return atomic(this.connection, async session => {
-            const comment = await this.commentModel.findOne({ _id: id, commentStatus: CommentStatus.ACTIVE }).session(session);
+            const comment = await this.commentModel.findOne({ _id: id, commentStatus: CommentStatus.ACTIVE, commentGroup: { $in: Object.values(CommentGroup) } }).session(session);
             if (!comment) throw new BadRequestException('COMMENT_NOT_FOUND');
             const delta = await this.likes.toggleLike({ memberId, likeRefId: id, likeGroup: LikeGroup.COMMENT }, session);
             return this.commentModel.findByIdAndUpdate(id, { $inc: { likeCount: delta } }, { new: true, session });
         });
     }
     async replyComment(actor: Member, id: mongoose.Types.ObjectId, text: string) {
-        const comment = await this.commentModel.findOne({ _id: id, commentStatus: CommentStatus.ACTIVE });
+        const comment = await this.commentModel.findOne({ _id: id, commentStatus: CommentStatus.ACTIVE, commentGroup: { $in: Object.values(CommentGroup) } });
         if (!comment) throw new BadRequestException('COMMENT_NOT_FOUND');
         const owns = comment.commentGroup === CommentGroup.PRODUCT && await this.products.exists({ _id: comment.commentRefId, productSellerId: actor._id });
         if (actor.memberType !== 'ADMIN' && !(actor.memberType === 'SELLER' && owns)) throw new ForbiddenException('FORBIDDEN');
@@ -121,7 +121,7 @@ export class CommentService {
 	public async updateComment(memberId: mongoose.Types.ObjectId, input: CommentUpdate): Promise<Comment> {
 		return atomic(this.connection, async (session) => {
 			const result = await this.commentModel.findOneAndUpdate(
-				{ _id: input._id, memberId, commentStatus: CommentStatus.ACTIVE },
+				{ _id: input._id, memberId, commentStatus: CommentStatus.ACTIVE, commentGroup: { $in: Object.values(CommentGroup) } },
 				{
 					$set: {
 						...(input.commentContent !== undefined ? { commentContent: input.commentContent } : {}),
@@ -142,6 +142,7 @@ export class CommentService {
 		const match: T = {
 			commentRefId: commentRefId,
 			commentStatus: CommentStatus.ACTIVE,
+			commentGroup: { $in: Object.values(CommentGroup) },
 		};
 
 		const sort: T = {
@@ -189,7 +190,7 @@ export class CommentService {
 	public async removeCommentByAdmin(input: mongoose.Types.ObjectId): Promise<Comment> {
 		return atomic(this.connection, async (session) => {
 			const result = await this.commentModel.findOneAndUpdate(
-				{ _id: input, commentStatus: CommentStatus.ACTIVE },
+				{ _id: input, commentStatus: CommentStatus.ACTIVE, commentGroup: { $in: Object.values(CommentGroup) } },
 				{ $set: { commentStatus: CommentStatus.DELETE } },
 				{ new: true, session },
 			);

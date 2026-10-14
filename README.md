@@ -44,14 +44,14 @@ Access tokens expire after 15 minutes. Refresh sessions rotate through an HttpOn
 
 ## Migration
 
-Unused Property source has been removed after reachability and schema verification; historical Property documents and persisted enum values remain untouched. Property resolvers are not registered in the live marketplace API. Products use a separate `products` collection. Real-estate properties are not silently converted into clothing products.
+The API exposes Kidify marketplace categories only. Unsupported historical categories are excluded from comment and notification responses; existing database records are not deleted or converted. Products use the `products` collection. The example development database is `kidify`. Changing the URI database name selects another database; it does not rename or copy existing data.
 
 The explicit, idempotent migration changes legacy AGENT accounts to SELLER, initializes new member statistics, and maps legacy article categories. It preserves passwords, documents and historical references. Back up/review the intended database before applying it.
 
 ```bash
-npx ts-node scripts/migrate-dianora.ts
+npx ts-node scripts/migrate-kidify.ts
 # After reviewing the dry-run and database backup:
-npx ts-node scripts/migrate-dianora.ts --apply
+npx ts-node scripts/migrate-kidify.ts --apply
 ```
 
 These scripts were not run against the existing remote database.

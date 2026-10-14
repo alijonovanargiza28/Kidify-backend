@@ -30,6 +30,7 @@ export class NotificationService {
 	async list(memberId: Types.ObjectId, input: NotificationsInquiry) {
 		const match = {
 			receiverId: memberId,
+			notificationGroup: { $in: Object.values(NotificationGroup) },
 			...(input.filter === 'UNREAD'
 				? { notificationStatus: NotificationStatus.WAIT }
 				: input.filter === 'READ'
@@ -45,11 +46,11 @@ export class NotificationService {
 		)[0];
 	}
 	count(memberId: Types.ObjectId) {
-		return this.model.countDocuments({ receiverId: memberId, notificationStatus: NotificationStatus.WAIT });
+		return this.model.countDocuments({ receiverId: memberId, notificationGroup: { $in: Object.values(NotificationGroup) }, notificationStatus: NotificationStatus.WAIT });
 	}
 	async read(memberId: Types.ObjectId, id: Types.ObjectId) {
 		const result = await this.model.findOneAndUpdate(
-			{ _id: id, receiverId: memberId },
+			{ _id: id, receiverId: memberId, notificationGroup: { $in: Object.values(NotificationGroup) } },
 			{ $set: { notificationStatus: NotificationStatus.READ } },
 			{ new: true },
 		);
@@ -61,7 +62,7 @@ export class NotificationService {
  }
 	async readAll(memberId: Types.ObjectId) {
 		await this.model.updateMany(
-			{ receiverId: memberId, notificationStatus: NotificationStatus.WAIT },
+			{ receiverId: memberId, notificationGroup: { $in: Object.values(NotificationGroup) }, notificationStatus: NotificationStatus.WAIT },
 			{ $set: { notificationStatus: NotificationStatus.READ } },
 		);
 		return true;

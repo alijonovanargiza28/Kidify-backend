@@ -20,5 +20,5 @@ export class ViewService {
 		}
 	}
 
-	// memberId→ qaysi member property ko‘rganini aniqlaymiz.
+	// memberId→ qaysi member mahsulotni ko‘rganini aniqlaymiz.
 }

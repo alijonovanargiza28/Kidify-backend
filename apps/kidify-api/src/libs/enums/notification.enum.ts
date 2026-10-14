@@ -16,7 +16,6 @@ export enum NotificationStatus {
 }
 registerEnumType(NotificationStatus, { name: 'NotificationStatus' });
 export enum NotificationGroup {
-	PROPERTY = 'PROPERTY', // Read legacy notifications without converting property references into products.
 	PRODUCT = 'PRODUCT',
 	ARTICLE = 'ARTICLE',
 	MEMBER = 'MEMBER',

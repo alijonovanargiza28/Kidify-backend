@@ -77,7 +77,7 @@ export const lookupAuthMemberLiked = (memberId: T, targetRefId: string = '$_id')
 							// likes.likeRefId == current target's _id
 							//likes.memberId = login bo‘lgan memberId deganidir.
 							// $and: Ikkala shart ham true bo‘lishi kerak.
-							// Ikkalasi ham YES bo‘lsa:Bu user shu property'ni like qilgan
+							// Ikkalasi ham YES bo‘lsa:Bu user shu mahsulotni like qilgan
 						},
 					},
 				},

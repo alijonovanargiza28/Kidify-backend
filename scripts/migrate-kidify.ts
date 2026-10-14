@@ -14,7 +14,7 @@ async function main() {
 			.countDocuments({ articleCategory: { $in: ['RECOMMEND', 'HUMOR'] } });
 		console.log(`Legacy AGENT accounts: ${legacyCount}; legacy article categories: ${articleCount}`);
 		if (!process.argv.includes('--apply')) {
-			console.log('Dry run only. Pass --apply after reviewing a database backup. Property documents are retained.');
+			console.log('Dry run only. Pass --apply after reviewing a database backup. Existing documents are retained.');
 			return;
 		}
 		await members.updateMany({ memberType: 'AGENT' }, { $set: { memberType: 'SELLER' } });
@@ -34,7 +34,7 @@ async function main() {
 		await connection
 			.collection('boardArticles')
 			.updateMany({ articleCategory: 'HUMOR' }, { $set: { articleCategory: 'FREE' } });
-		console.log('Migration applied. Existing property documents, likes, views and historical references retained.');
+		console.log('Migration applied. Existing documents, likes, views and historical references retained.');
 	} finally {
 		await connection.close();
 	}

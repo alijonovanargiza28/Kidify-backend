@@ -48,10 +48,6 @@ const NotificationSchema = new Schema(
 
     targetId: Schema.Types.ObjectId,
     dedupeKey: String,
-    propertyId: {
-      type: Schema.Types.ObjectId,
-      ref: "Property",
-    },
 
     articleId: {
       type: Schema.Types.ObjectId,

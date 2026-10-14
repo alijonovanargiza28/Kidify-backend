@@ -697,7 +697,6 @@ enum NotificationStatus {
 }
 
 enum NotificationGroup {
-  PROPERTY
   PRODUCT
   ARTICLE
   MEMBER
@@ -735,7 +734,6 @@ enum CommentStatus {
 enum CommentGroup {
   MEMBER
   ARTICLE
-  PROPERTY
   PRODUCT
 }
 
@@ -1109,6 +1107,7 @@ input AddressInput {
 }
 
 input CheckoutInput {
+  cartItemIds: [String!]
   addressId: String!
   couponCode: String
   requestId: String!

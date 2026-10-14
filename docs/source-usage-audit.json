@@ -22,7 +22,7 @@
     "eslint.config.mjs",
     "scripts/audit-chat-products.ts",
     "scripts/bootstrap-admin.ts",
-    "scripts/migrate-dianora.ts",
+    "scripts/migrate-kidify.ts",
     "scripts/verify-schema.ts"
   ],
   "reachable": [
@@ -204,7 +204,7 @@
     "eslint.config.mjs",
     "scripts/audit-chat-products.ts",
     "scripts/bootstrap-admin.ts",
-    "scripts/migrate-dianora.ts",
+    "scripts/migrate-kidify.ts",
     "scripts/verify-schema.ts"
   ],
   "unreachable": [],
@@ -1341,7 +1341,7 @@
     "scripts/bootstrap-admin.ts": [
       "apps/kidify-api/src/schemas/Member.model.ts"
     ],
-    "scripts/migrate-dianora.ts": [],
+    "scripts/migrate-kidify.ts": [],
     "scripts/verify-schema.ts": [
       "apps/kidify-api/src/testing/offline-app.ts"
     ]
