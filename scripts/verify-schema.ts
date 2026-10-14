@@ -4,7 +4,7 @@ import { printSchema, validateSchema } from 'graphql';
 import { GraphQLSchemaHost } from '@nestjs/graphql';
 import { getConnectionToken } from '@nestjs/mongoose';
 import { Connection } from 'mongoose';
-import { createOfflineApp } from '../apps/nestar-api/src/testing/offline-app';
+import { createOfflineApp } from '../apps/kidify-api/src/testing/offline-app';
 async function main() {
 	const app = await createOfflineApp();
 	try {
@@ -17,7 +17,7 @@ async function main() {
 		const mutations = Object.keys(schema.getMutationType()!.getFields());
 		writeFileSync(
 			'docs/graphql-operations.md',
-			'# DIANORA BABY GraphQL operations\n\nSee `graphql-schema.graphql` for exact input, output and enum definitions.\n\n## Queries\n\n' +
+			'# Kidify GraphQL operations\n\nSee `graphql-schema.graphql` for exact input, output and enum definitions.\n\n## Queries\n\n' +
 				queries.map((name) => '- `' + name + '`').join('\n') +
 				'\n\n## Mutations\n\n' +
 				mutations.map((name) => '- `' + name + '`').join('\n') +

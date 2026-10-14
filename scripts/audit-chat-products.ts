@@ -2,12 +2,12 @@
 import "reflect-metadata";
 import { config } from "dotenv";
 import mongoose from "mongoose";
-import ProductSchema from "../apps/nestar-api/src/schemas/Product.model";
-import MemberSchema from "../apps/nestar-api/src/schemas/Member.model";
-import BrandSchema from "../apps/nestar-api/src/schemas/Brand.model";
-import { ProductService } from "../apps/nestar-api/src/components/product/product.service";
-import { ChatAssistantService } from "../apps/nestar-api/src/components/message/chat-assistant.service";
-import { AssistantSearch } from "../apps/nestar-api/src/components/product/assistant-search";
+import ProductSchema from "../apps/kidify-api/src/schemas/Product.model";
+import MemberSchema from "../apps/kidify-api/src/schemas/Member.model";
+import BrandSchema from "../apps/kidify-api/src/schemas/Brand.model";
+import { ProductService } from "../apps/kidify-api/src/components/product/product.service";
+import { ChatAssistantService } from "../apps/kidify-api/src/components/message/chat-assistant.service";
+import { AssistantSearch } from "../apps/kidify-api/src/components/product/assistant-search";
 config();
 async function run() {
   const uri =

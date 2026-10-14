@@ -2,7 +2,7 @@ import 'reflect-metadata';
 import { ConfigModule } from '@nestjs/config';
 import { connect, connection, model } from 'mongoose';
 import * as bcrypt from 'bcryptjs';
-import MemberSchema from '../apps/nestar-api/src/schemas/Member.model';
+import MemberSchema from '../apps/kidify-api/src/schemas/Member.model';
 ConfigModule.forRoot();
 async function main() {
 	const { ADMIN_NICK: memberNick, ADMIN_PHONE: memberPhone, ADMIN_PASSWORD: password } = process.env;

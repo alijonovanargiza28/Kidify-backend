@@ -1,7 +1,7 @@
 {
-	"name": "nestars",
+	"name": "kidify",
 	"version": "0.0.1",
-	"description": "",
+	"description": "Kidify marketplace API and batch applications",
 	"author": "",
 	"private": true,
 	"license": "ITC",
@@ -10,16 +10,18 @@
 		"format": "prettier --write \"apps/**/*.ts\" \"libs/**/*.ts\"",
 		"start": "nest start",
 		"start:dev": "nest start --watch",
-		"start:dev:batch": "nest start nestar-batch --watch",
+		"start:dev:batch": "nest start kidify-batch --watch",
 		"start:debug": "nest start --debug --watch",
-		"start:prod": "node dist/apps/nestar-api/main",
-		"start:prod:batch": "node dist/apps/nestar-batch/main",
-		"lint": "eslint \"{src,apps,libs,test}/**/*.ts\" --fix",
+		"start:prod": "node dist/apps/kidify-api/main",
+		"start:prod:batch": "node dist/apps/kidify-batch/main",
+		"lint": "ESLINT_USE_FLAT_CONFIG=true eslint --config eslint.config.mjs \"{apps,scripts}/**/*.ts\"",
 		"test": "jest",
 		"test:watch": "jest --watch",
 		"test:cov": "jest --coverage",
 		"test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
-		"test:e2e": "jest --config ./apps/nestar-api/test/jest-e2e.json"
+		"test:e2e": "jest --config ./apps/kidify-api/test/jest-e2e.json",
+		"build:batch": "nest build kidify-batch",
+		"typecheck": "tsc --noEmit"
 	},
 	"dependencies": {
 		"@apollo/server": "^4.9.5",
@@ -41,11 +43,9 @@
 		"class-validator": "^0.14.0",
 		"graphql": "^16.8.1",
 		"graphql-upload": "^13.0.0",
-		"moment": "^2.29.4",
 		"mongoose": "^8.0.0",
 		"reflect-metadata": "^0.1.13",
 		"rxjs": "^7.8.1",
-		"uuid": "^9.0.1",
 		"ws": "^8.14.2"
 	},
 	"devDependencies": {

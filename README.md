@@ -1,11 +1,11 @@
-# DIANORA BABY backend
+# Kidify backend
 
-Multi-seller baby and kids marketplace built by extending the existing Nestar backend. NestJS, TypeScript, GraphQL/Apollo, MongoDB/Mongoose and JWT remain in place. Frontend code is outside this repository's scope.
+Multi-seller baby and kids marketplace with the existing authentication and social features. NestJS, TypeScript, GraphQL/Apollo, MongoDB/Mongoose and JWT remain in place. Frontend code is outside this repository's scope.
 
 ## Applications
 
-- `apps/nestar-api`: GraphQL API, shared member/social modules, marketplace commerce and the existing WebSocket gateway.
-- `apps/nestar-batch`: scheduled product and seller ranking calculations.
+- `apps/kidify-api`: GraphQL API, shared member/social modules, marketplace commerce and the existing WebSocket gateway.
+- `apps/kidify-batch`: scheduled product and seller ranking calculations.
 
 ## Run
 
@@ -21,7 +21,7 @@ GraphQL is served at `/graphql`; uploaded images are served at `/uploads`. API d
 
 ```bash
 npm run build
-npx nest build nestar-batch
+npx nest build kidify-batch
 npm run start:prod
 npm run start:prod:batch
 ```
@@ -40,11 +40,11 @@ npx ts-node scripts/bootstrap-admin.ts
 npx ts-node scripts/bootstrap-admin.ts --apply
 ```
 
-JWT remains stateless with the existing 30-day lifetime. `logout` confirms client-side logout; the client must remove its token. Protected requests reload the current member's role and status from MongoDB, so blocking/demotion takes effect for previously issued tokens.
+Access tokens expire after 15 minutes. Refresh sessions rotate through an HttpOnly cookie with an absolute 30-day lifetime. `logout` revokes the refresh family and clears its cookie. Protected requests reload the current member's role and status from MongoDB, so blocking/demotion takes effect for previously issued tokens.
 
 ## Migration
 
-Existing Property source and documents are retained; Property resolvers are no longer registered in the live marketplace API. Products use a separate `products` collection. Real-estate properties are not silently converted into clothing products.
+Unused Property source has been removed after reachability and schema verification; historical Property documents and persisted enum values remain untouched. Property resolvers are not registered in the live marketplace API. Products use a separate `products` collection. Real-estate properties are not silently converted into clothing products.
 
 The explicit, idempotent migration changes legacy AGENT accounts to SELLER, initializes new member statistics, and maps legacy article categories. It preserves passwords, documents and historical references. Back up/review the intended database before applying it.
 
@@ -63,9 +63,11 @@ npm test -- --runInBand
 npx tsc --noEmit --incremental false -p tsconfig.json
 npx ts-node scripts/verify-schema.ts
 npm run test:e2e
-npx jest --config apps/nestar-batch/test/jest-e2e.json --runInBand
+npx jest --config apps/kidify-batch/test/jest-e2e.json --runInBand
 ```
 
 Unit/security tests and the complete application/schema smoke test use disconnected models and explicit mocks. They do not contact the `.env` database. The schema script also exports GraphQL operations and declared indexes to `docs/`.
 
 See [implementation report](docs/backend-implementation.md), [GraphQL schema](docs/graphql-schema.graphql), [operations](docs/graphql-operations.md), and [declared indexes](docs/database-indexes.json). Real MongoDB transaction/concurrency tests and HTTP/WebSocket network e2e still require an unrestricted local test environment.
+
+Production setup: [DEPLOYMENT.md](docs/DEPLOYMENT.md).

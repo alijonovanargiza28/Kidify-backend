@@ -1,0 +1,1349 @@
+{
+  "root": "/Users/nargizaalijonova/Desktop/Kidify",
+  "roots": [
+    "apps/kidify-api/src/app.controller.spec.ts",
+    "apps/kidify-api/src/main.ts",
+    "apps/kidify-api/src/testing/auth-commerce.spec.ts",
+    "apps/kidify-api/src/testing/authorization.spec.ts",
+    "apps/kidify-api/src/testing/chat-assistant.spec.ts",
+    "apps/kidify-api/src/testing/chat-realtime.spec.ts",
+    "apps/kidify-api/src/testing/checkout.spec.ts",
+    "apps/kidify-api/src/testing/creation-validation.spec.ts",
+    "apps/kidify-api/src/testing/kidify-refinements.spec.ts",
+    "apps/kidify-api/src/testing/marketplace.spec.ts",
+    "apps/kidify-api/src/testing/refresh-auth.spec.ts",
+    "apps/kidify-api/src/testing/remaining-fixes.spec.ts",
+    "apps/kidify-api/src/testing/schema.spec.ts",
+    "apps/kidify-api/src/testing/self-member-actions.spec.ts",
+    "apps/kidify-api/src/testing/seller-fulfillment.spec.ts",
+    "apps/kidify-api/test/app.e2e-spec.ts",
+    "apps/kidify-batch/src/main.ts",
+    "apps/kidify-batch/test/app.e2e-spec.ts",
+    "eslint.config.mjs",
+    "scripts/audit-chat-products.ts",
+    "scripts/bootstrap-admin.ts",
+    "scripts/migrate-dianora.ts",
+    "scripts/verify-schema.ts"
+  ],
+  "reachable": [
+    "apps/kidify-api/src/app.controller.spec.ts",
+    "apps/kidify-api/src/app.controller.ts",
+    "apps/kidify-api/src/app.module.ts",
+    "apps/kidify-api/src/app.resolver.ts",
+    "apps/kidify-api/src/app.service.ts",
+    "apps/kidify-api/src/components/address/address.module.ts",
+    "apps/kidify-api/src/components/address/address.resolver.ts",
+    "apps/kidify-api/src/components/address/address.service.ts",
+    "apps/kidify-api/src/components/address/address.ts",
+    "apps/kidify-api/src/components/auth/auth-http.ts",
+    "apps/kidify-api/src/components/auth/auth.module.ts",
+    "apps/kidify-api/src/components/auth/auth.resolver.ts",
+    "apps/kidify-api/src/components/auth/auth.service.ts",
+    "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+    "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+    "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+    "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+    "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+    "apps/kidify-api/src/components/auth/refresh-session.model.ts",
+    "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+    "apps/kidify-api/src/components/board-article/board-article.module.ts",
+    "apps/kidify-api/src/components/board-article/board-article.resolver.ts",
+    "apps/kidify-api/src/components/board-article/board-article.service.ts",
+    "apps/kidify-api/src/components/brand/brand.module.ts",
+    "apps/kidify-api/src/components/brand/brand.resolver.ts",
+    "apps/kidify-api/src/components/brand/brand.service.ts",
+    "apps/kidify-api/src/components/brand/brand.ts",
+    "apps/kidify-api/src/components/cart/cart.module.ts",
+    "apps/kidify-api/src/components/cart/cart.resolver.ts",
+    "apps/kidify-api/src/components/cart/cart.service.ts",
+    "apps/kidify-api/src/components/cart/cart.ts",
+    "apps/kidify-api/src/components/comment/comment.module.ts",
+    "apps/kidify-api/src/components/comment/comment.resolver.ts",
+    "apps/kidify-api/src/components/comment/comment.service.ts",
+    "apps/kidify-api/src/components/components.module.ts",
+    "apps/kidify-api/src/components/coupon/coupon.module.ts",
+    "apps/kidify-api/src/components/coupon/coupon.resolver.ts",
+    "apps/kidify-api/src/components/coupon/coupon.service.ts",
+    "apps/kidify-api/src/components/coupon/coupon.ts",
+    "apps/kidify-api/src/components/dashboard/dashboard.module.ts",
+    "apps/kidify-api/src/components/dashboard/dashboard.resolver.ts",
+    "apps/kidify-api/src/components/dashboard/dashboard.service.ts",
+    "apps/kidify-api/src/components/dashboard/dashboard.ts",
+    "apps/kidify-api/src/components/delivery/delivery.module.ts",
+    "apps/kidify-api/src/components/delivery/delivery.resolver.ts",
+    "apps/kidify-api/src/components/delivery/delivery.ts",
+    "apps/kidify-api/src/components/event/event.module.ts",
+    "apps/kidify-api/src/components/event/event.resolver.ts",
+    "apps/kidify-api/src/components/event/event.service.ts",
+    "apps/kidify-api/src/components/event/event.ts",
+    "apps/kidify-api/src/components/faq/faq.module.ts",
+    "apps/kidify-api/src/components/faq/faq.resolver.ts",
+    "apps/kidify-api/src/components/faq/faq.service.ts",
+    "apps/kidify-api/src/components/faq/faq.ts",
+    "apps/kidify-api/src/components/follow/follow.module.ts",
+    "apps/kidify-api/src/components/follow/follow.resolver.ts",
+    "apps/kidify-api/src/components/follow/follow.service.ts",
+    "apps/kidify-api/src/components/like/like.module.ts",
+    "apps/kidify-api/src/components/like/like.service.ts",
+    "apps/kidify-api/src/components/member/member.module.ts",
+    "apps/kidify-api/src/components/member/member.resolver.ts",
+    "apps/kidify-api/src/components/member/member.service.ts",
+    "apps/kidify-api/src/components/message/chat-assistant.service.ts",
+    "apps/kidify-api/src/components/message/chat-state.model.ts",
+    "apps/kidify-api/src/components/message/message.module.ts",
+    "apps/kidify-api/src/components/message/message.resolver.ts",
+    "apps/kidify-api/src/components/message/message.service.ts",
+    "apps/kidify-api/src/components/message/message.ts",
+    "apps/kidify-api/src/components/notification/notification.module.ts",
+    "apps/kidify-api/src/components/notification/notification.resolver.ts",
+    "apps/kidify-api/src/components/notification/notification.service.ts",
+    "apps/kidify-api/src/components/notification/notification.ts",
+    "apps/kidify-api/src/components/order/order.module.ts",
+    "apps/kidify-api/src/components/order/order.resolver.ts",
+    "apps/kidify-api/src/components/order/order.service.ts",
+    "apps/kidify-api/src/components/order/order.ts",
+    "apps/kidify-api/src/components/payment/payment.module.ts",
+    "apps/kidify-api/src/components/payment/payment.resolver.ts",
+    "apps/kidify-api/src/components/payment/payment.ts",
+    "apps/kidify-api/src/components/product/assistant-search.ts",
+    "apps/kidify-api/src/components/product/product-activity.resolver.ts",
+    "apps/kidify-api/src/components/product/product.module.ts",
+    "apps/kidify-api/src/components/product/product.resolver.ts",
+    "apps/kidify-api/src/components/product/product.rules.ts",
+    "apps/kidify-api/src/components/product/product.service.ts",
+    "apps/kidify-api/src/components/product/product.ts",
+    "apps/kidify-api/src/components/review/review.module.ts",
+    "apps/kidify-api/src/components/review/review.resolver.ts",
+    "apps/kidify-api/src/components/review/review.service.ts",
+    "apps/kidify-api/src/components/review/review.ts",
+    "apps/kidify-api/src/components/seller-code/seller-code.module.ts",
+    "apps/kidify-api/src/components/seller-code/seller-code.resolver.ts",
+    "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+    "apps/kidify-api/src/components/seller-code/seller-code.ts",
+    "apps/kidify-api/src/components/support/support.module.ts",
+    "apps/kidify-api/src/components/support/support.resolver.ts",
+    "apps/kidify-api/src/components/support/support.service.ts",
+    "apps/kidify-api/src/components/support/support.ts",
+    "apps/kidify-api/src/components/view/view.module.ts",
+    "apps/kidify-api/src/components/view/view.service.ts",
+    "apps/kidify-api/src/database/database.module.ts",
+    "apps/kidify-api/src/libs/config.ts",
+    "apps/kidify-api/src/libs/dto/board-article/board-article.input.ts",
+    "apps/kidify-api/src/libs/dto/board-article/board-article.ts",
+    "apps/kidify-api/src/libs/dto/board-article/board-article.update.ts",
+    "apps/kidify-api/src/libs/dto/comment/comment.input.ts",
+    "apps/kidify-api/src/libs/dto/comment/comment.ts",
+    "apps/kidify-api/src/libs/dto/comment/comment.update.ts",
+    "apps/kidify-api/src/libs/dto/follow/follow.input.ts",
+    "apps/kidify-api/src/libs/dto/follow/follow.ts",
+    "apps/kidify-api/src/libs/dto/like/like.input.ts",
+    "apps/kidify-api/src/libs/dto/like/like.ts",
+    "apps/kidify-api/src/libs/dto/member/member.input.ts",
+    "apps/kidify-api/src/libs/dto/member/member.ts",
+    "apps/kidify-api/src/libs/dto/member/member.update.ts",
+    "apps/kidify-api/src/libs/dto/view/view.input.ts",
+    "apps/kidify-api/src/libs/dto/view/view.ts",
+    "apps/kidify-api/src/libs/enums/board-article.enum.ts",
+    "apps/kidify-api/src/libs/enums/comment.enum.ts",
+    "apps/kidify-api/src/libs/enums/common.enum.ts",
+    "apps/kidify-api/src/libs/enums/intersepter/loggingIntercepter.ts",
+    "apps/kidify-api/src/libs/enums/like.enum.ts",
+    "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+    "apps/kidify-api/src/libs/enums/member.enum.ts",
+    "apps/kidify-api/src/libs/enums/notification.enum.ts",
+    "apps/kidify-api/src/libs/enums/product.enum.ts",
+    "apps/kidify-api/src/libs/enums/view.enum.ts",
+    "apps/kidify-api/src/libs/marketplace.ts",
+    "apps/kidify-api/src/libs/types/common.ts",
+    "apps/kidify-api/src/libs/upload.ts",
+    "apps/kidify-api/src/main.ts",
+    "apps/kidify-api/src/schemas/Address.model.ts",
+    "apps/kidify-api/src/schemas/BoardArticle.model.ts",
+    "apps/kidify-api/src/schemas/Brand.model.ts",
+    "apps/kidify-api/src/schemas/Cart.model.ts",
+    "apps/kidify-api/src/schemas/Comment.model.ts",
+    "apps/kidify-api/src/schemas/Coupon.model.ts",
+    "apps/kidify-api/src/schemas/Delivery.model.ts",
+    "apps/kidify-api/src/schemas/Event.model.ts",
+    "apps/kidify-api/src/schemas/FAQ.model.ts",
+    "apps/kidify-api/src/schemas/Follow.model.ts",
+    "apps/kidify-api/src/schemas/Like.model.ts",
+    "apps/kidify-api/src/schemas/Member.model.ts",
+    "apps/kidify-api/src/schemas/Message.model.ts",
+    "apps/kidify-api/src/schemas/Notification.model.ts",
+    "apps/kidify-api/src/schemas/Order.model.ts",
+    "apps/kidify-api/src/schemas/Payment.model.ts",
+    "apps/kidify-api/src/schemas/Product.model.ts",
+    "apps/kidify-api/src/schemas/Review.model.ts",
+    "apps/kidify-api/src/schemas/Support.model.ts",
+    "apps/kidify-api/src/schemas/View.model.ts",
+    "apps/kidify-api/src/socket/socket.gateway.ts",
+    "apps/kidify-api/src/socket/socket.module.ts",
+    "apps/kidify-api/src/testing/auth-commerce.spec.ts",
+    "apps/kidify-api/src/testing/authorization.spec.ts",
+    "apps/kidify-api/src/testing/chat-assistant.spec.ts",
+    "apps/kidify-api/src/testing/chat-realtime.spec.ts",
+    "apps/kidify-api/src/testing/checkout.spec.ts",
+    "apps/kidify-api/src/testing/creation-validation.spec.ts",
+    "apps/kidify-api/src/testing/kidify-refinements.spec.ts",
+    "apps/kidify-api/src/testing/marketplace.spec.ts",
+    "apps/kidify-api/src/testing/offline-app.ts",
+    "apps/kidify-api/src/testing/refresh-auth.spec.ts",
+    "apps/kidify-api/src/testing/remaining-fixes.spec.ts",
+    "apps/kidify-api/src/testing/schema.spec.ts",
+    "apps/kidify-api/src/testing/self-member-actions.spec.ts",
+    "apps/kidify-api/src/testing/seller-fulfillment.spec.ts",
+    "apps/kidify-api/test/app.e2e-spec.ts",
+    "apps/kidify-batch/src/database/database.module.ts",
+    "apps/kidify-batch/src/kidify-batch.controller.ts",
+    "apps/kidify-batch/src/kidify-batch.module.ts",
+    "apps/kidify-batch/src/kidify-batch.service.ts",
+    "apps/kidify-batch/src/lib/config.ts",
+    "apps/kidify-batch/src/main.ts",
+    "apps/kidify-batch/test/app.e2e-spec.ts",
+    "eslint.config.mjs",
+    "scripts/audit-chat-products.ts",
+    "scripts/bootstrap-admin.ts",
+    "scripts/migrate-dianora.ts",
+    "scripts/verify-schema.ts"
+  ],
+  "unreachable": [],
+  "dynamic": [],
+  "unresolved": [],
+  "externalUsed": [
+    "@nestjs/apollo",
+    "@nestjs/axios",
+    "@nestjs/common",
+    "@nestjs/config",
+    "@nestjs/core",
+    "@nestjs/graphql",
+    "@nestjs/jwt",
+    "@nestjs/mongoose",
+    "@nestjs/platform-ws",
+    "@nestjs/schedule",
+    "@nestjs/testing",
+    "@nestjs/websockets",
+    "@typescript-eslint/eslint-plugin",
+    "@typescript-eslint/parser",
+    "apps",
+    "bcryptjs",
+    "class-transformer",
+    "class-validator",
+    "crypto",
+    "dotenv",
+    "express",
+    "fs",
+    "graphql",
+    "graphql-upload",
+    "http",
+    "mongoose",
+    "path",
+    "reflect-metadata",
+    "rxjs",
+    "stream",
+    "supertest",
+    "ws"
+  ],
+  "edges": {
+    "apps/kidify-api/src/app.controller.spec.ts": [
+      "apps/kidify-api/src/app.controller.ts",
+      "apps/kidify-api/src/app.service.ts"
+    ],
+    "apps/kidify-api/src/app.controller.ts": [
+      "apps/kidify-api/src/app.service.ts"
+    ],
+    "apps/kidify-api/src/app.module.ts": [
+      "apps/kidify-api/src/app.controller.ts",
+      "apps/kidify-api/src/app.service.ts",
+      "apps/kidify-api/src/app.resolver.ts",
+      "apps/kidify-api/src/components/components.module.ts",
+      "apps/kidify-api/src/database/database.module.ts",
+      "apps/kidify-api/src/libs/types/common.ts",
+      "apps/kidify-api/src/socket/socket.module.ts"
+    ],
+    "apps/kidify-api/src/app.resolver.ts": [],
+    "apps/kidify-api/src/app.service.ts": [],
+    "apps/kidify-api/src/components/address/address.module.ts": [
+      "apps/kidify-api/src/schemas/Address.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/address/address.service.ts",
+      "apps/kidify-api/src/components/address/address.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/address/address.resolver.ts": [
+      "apps/kidify-api/src/components/address/address.ts",
+      "apps/kidify-api/src/components/address/address.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/address/address.service.ts": [
+      "apps/kidify-api/src/components/address/address.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/address/address.ts": [],
+    "apps/kidify-api/src/components/auth/auth-http.ts": [],
+    "apps/kidify-api/src/components/auth/auth.module.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.model.ts",
+      "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+      "apps/kidify-api/src/components/auth/auth.resolver.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts"
+    ],
+    "apps/kidify-api/src/components/auth/auth.resolver.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+      "apps/kidify-api/src/components/auth/auth-http.ts"
+    ],
+    "apps/kidify-api/src/components/auth/auth.service.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.model.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts": [],
+    "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts": [],
+    "apps/kidify-api/src/components/auth/guards/auth.guard.ts": [
+      "apps/kidify-api/src/components/auth/auth.service.ts"
+    ],
+    "apps/kidify-api/src/components/auth/guards/roles.guard.ts": [
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts"
+    ],
+    "apps/kidify-api/src/components/auth/guards/without.guard.ts": [
+      "apps/kidify-api/src/components/auth/auth.service.ts"
+    ],
+    "apps/kidify-api/src/components/auth/refresh-session.model.ts": [],
+    "apps/kidify-api/src/components/auth/refresh-session.service.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.model.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/board-article/board-article.module.ts": [
+      "apps/kidify-api/src/components/board-article/board-article.resolver.ts",
+      "apps/kidify-api/src/components/board-article/board-article.service.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/member/member.module.ts",
+      "apps/kidify-api/src/components/view/view.module.ts",
+      "apps/kidify-api/src/schemas/BoardArticle.model.ts",
+      "apps/kidify-api/src/components/like/like.module.ts"
+    ],
+    "apps/kidify-api/src/components/board-article/board-article.resolver.ts": [
+      "apps/kidify-api/src/components/board-article/board-article.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.input.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.update.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts"
+    ],
+    "apps/kidify-api/src/components/board-article/board-article.service.ts": [
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.input.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.update.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/components/view/view.service.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/enums/view.enum.ts",
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts",
+      "apps/kidify-api/src/libs/types/common.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/dto/like/like.input.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts"
+    ],
+    "apps/kidify-api/src/components/brand/brand.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Brand.model.ts",
+      "apps/kidify-api/src/components/brand/brand.service.ts",
+      "apps/kidify-api/src/components/brand/brand.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/brand/brand.resolver.ts": [
+      "apps/kidify-api/src/components/brand/brand.ts",
+      "apps/kidify-api/src/components/brand/brand.service.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/brand/brand.service.ts": [
+      "apps/kidify-api/src/components/brand/brand.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/brand/brand.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/cart/cart.module.ts": [
+      "apps/kidify-api/src/schemas/Cart.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/product/product.module.ts",
+      "apps/kidify-api/src/components/like/like.module.ts",
+      "apps/kidify-api/src/components/cart/cart.service.ts",
+      "apps/kidify-api/src/components/cart/cart.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/cart/cart.resolver.ts": [
+      "apps/kidify-api/src/components/cart/cart.ts",
+      "apps/kidify-api/src/components/cart/cart.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/cart/cart.service.ts": [
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/cart/cart.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/components/product/product.rules.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/cart/cart.ts": [
+      "apps/kidify-api/src/components/product/product.ts"
+    ],
+    "apps/kidify-api/src/components/comment/comment.module.ts": [
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/components/like/like.module.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/BoardArticle.model.ts",
+      "apps/kidify-api/src/components/comment/comment.resolver.ts",
+      "apps/kidify-api/src/components/comment/comment.service.ts",
+      "apps/kidify-api/src/schemas/Comment.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/member/member.module.ts",
+      "apps/kidify-api/src/components/product/product.module.ts",
+      "apps/kidify-api/src/components/board-article/board-article.module.ts"
+    ],
+    "apps/kidify-api/src/components/comment/comment.resolver.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/comment/comment.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.input.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.update.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts"
+    ],
+    "apps/kidify-api/src/components/comment/comment.service.ts": [
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/board-article/board-article.service.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.input.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/enums/comment.enum.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.ts",
+      "apps/kidify-api/src/libs/dto/comment/comment.update.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/libs/types/common.ts"
+    ],
+    "apps/kidify-api/src/components/components.module.ts": [
+      "apps/kidify-api/src/components/dashboard/dashboard.module.ts",
+      "apps/kidify-api/src/components/coupon/coupon.module.ts",
+      "apps/kidify-api/src/components/address/address.module.ts",
+      "apps/kidify-api/src/components/order/order.module.ts",
+      "apps/kidify-api/src/components/payment/payment.module.ts",
+      "apps/kidify-api/src/components/delivery/delivery.module.ts",
+      "apps/kidify-api/src/components/review/review.module.ts",
+      "apps/kidify-api/src/components/message/message.module.ts",
+      "apps/kidify-api/src/components/event/event.module.ts",
+      "apps/kidify-api/src/components/faq/faq.module.ts",
+      "apps/kidify-api/src/components/support/support.module.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.module.ts",
+      "apps/kidify-api/src/components/product/product.module.ts",
+      "apps/kidify-api/src/components/brand/brand.module.ts",
+      "apps/kidify-api/src/components/notification/notification.module.ts",
+      "apps/kidify-api/src/components/cart/cart.module.ts",
+      "apps/kidify-api/src/components/member/member.module.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/comment/comment.module.ts",
+      "apps/kidify-api/src/components/like/like.module.ts",
+      "apps/kidify-api/src/components/view/view.module.ts",
+      "apps/kidify-api/src/components/follow/follow.module.ts",
+      "apps/kidify-api/src/components/board-article/board-article.module.ts"
+    ],
+    "apps/kidify-api/src/components/coupon/coupon.module.ts": [
+      "apps/kidify-api/src/schemas/Coupon.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/cart/cart.module.ts",
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/components/coupon/coupon.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/coupon/coupon.resolver.ts": [
+      "apps/kidify-api/src/components/coupon/coupon.ts",
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/components/cart/cart.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/coupon/coupon.service.ts": [
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/coupon/coupon.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/coupon/coupon.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/dashboard/dashboard.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/member/member.module.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/components/dashboard/dashboard.service.ts",
+      "apps/kidify-api/src/components/dashboard/dashboard.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/dashboard/dashboard.resolver.ts": [
+      "apps/kidify-api/src/components/dashboard/dashboard.ts",
+      "apps/kidify-api/src/components/dashboard/dashboard.service.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts"
+    ],
+    "apps/kidify-api/src/components/dashboard/dashboard.service.ts": [
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/dashboard/dashboard.ts": [
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/order/order.ts"
+    ],
+    "apps/kidify-api/src/components/delivery/delivery.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/order/order.module.ts",
+      "apps/kidify-api/src/components/delivery/delivery.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/delivery/delivery.resolver.ts": [
+      "apps/kidify-api/src/components/delivery/delivery.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/delivery/delivery.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/address/address.ts"
+    ],
+    "apps/kidify-api/src/components/event/event.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Event.model.ts",
+      "apps/kidify-api/src/components/event/event.service.ts",
+      "apps/kidify-api/src/components/event/event.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/event/event.resolver.ts": [
+      "apps/kidify-api/src/components/event/event.ts",
+      "apps/kidify-api/src/components/event/event.service.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/event/event.service.ts": [
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/components/event/event.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/event/event.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/faq/faq.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/FAQ.model.ts",
+      "apps/kidify-api/src/components/faq/faq.service.ts",
+      "apps/kidify-api/src/components/faq/faq.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/faq/faq.resolver.ts": [
+      "apps/kidify-api/src/components/faq/faq.ts",
+      "apps/kidify-api/src/components/faq/faq.service.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/faq/faq.service.ts": [
+      "apps/kidify-api/src/components/faq/faq.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/faq/faq.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/follow/follow.module.ts": [
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/follow/follow.resolver.ts",
+      "apps/kidify-api/src/components/follow/follow.service.ts",
+      "apps/kidify-api/src/schemas/Follow.model.ts",
+      "apps/kidify-api/src/components/member/member.module.ts"
+    ],
+    "apps/kidify-api/src/components/follow/follow.resolver.ts": [
+      "apps/kidify-api/src/components/follow/follow.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/dto/follow/follow.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/dto/follow/follow.input.ts"
+    ],
+    "apps/kidify-api/src/components/follow/follow.service.ts": [
+      "apps/kidify-api/src/libs/dto/follow/follow.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/dto/follow/follow.input.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/like/like.module.ts": [
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/schemas/Like.model.ts"
+    ],
+    "apps/kidify-api/src/components/like/like.service.ts": [
+      "apps/kidify-api/src/libs/dto/like/like.ts",
+      "apps/kidify-api/src/libs/dto/like/like.input.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/types/common.ts"
+    ],
+    "apps/kidify-api/src/components/member/member.module.ts": [
+      "apps/kidify-api/src/components/seller-code/seller-code.module.ts",
+      "apps/kidify-api/src/components/member/member.resolver.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/view/view.module.ts",
+      "apps/kidify-api/src/schemas/Follow.model.ts",
+      "apps/kidify-api/src/components/like/like.module.ts"
+    ],
+    "apps/kidify-api/src/components/member/member.resolver.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+      "apps/kidify-api/src/components/auth/auth-http.ts",
+      "apps/kidify-api/src/libs/upload.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.input.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/dto/member/member.update.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts"
+    ],
+    "apps/kidify-api/src/components/member/member.service.ts": [
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/dto/member/member.input.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.update.ts",
+      "apps/kidify-api/src/libs/types/common.ts",
+      "apps/kidify-api/src/components/view/view.service.ts",
+      "apps/kidify-api/src/libs/enums/view.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/dto/like/like.input.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/dto/follow/follow.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/message/chat-assistant.service.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/message/message.service.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/product/assistant-search.ts"
+    ],
+    "apps/kidify-api/src/components/message/chat-state.model.ts": [],
+    "apps/kidify-api/src/components/message/message.module.ts": [
+      "apps/kidify-api/src/components/product/product.module.ts",
+      "apps/kidify-api/src/components/message/chat-state.model.ts",
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/components/message/chat-assistant.service.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Message.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/message/message.service.ts",
+      "apps/kidify-api/src/components/message/message.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/message/message.resolver.ts": [
+      "apps/kidify-api/src/components/message/message.ts",
+      "apps/kidify-api/src/components/message/message.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/message/message.service.ts": [
+      "apps/kidify-api/src/components/message/message.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts"
+    ],
+    "apps/kidify-api/src/components/message/message.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts"
+    ],
+    "apps/kidify-api/src/components/notification/notification.module.ts": [
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Notification.model.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/components/notification/notification.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/notification/notification.resolver.ts": [
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/notification/notification.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/notification/notification.service.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/notification/notification.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/notification/notification.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/order/order.module.ts": [
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/schemas/Cart.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Address.model.ts",
+      "apps/kidify-api/src/schemas/Payment.model.ts",
+      "apps/kidify-api/src/schemas/Delivery.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/schemas/Coupon.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/product/product.module.ts",
+      "apps/kidify-api/src/components/coupon/coupon.module.ts",
+      "apps/kidify-api/src/components/cart/cart.module.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/order/order.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/order/order.resolver.ts": [
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/cart/cart.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/order/order.service.ts": [
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/cart/cart.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/components/address/address.ts",
+      "apps/kidify-api/src/components/payment/payment.ts",
+      "apps/kidify-api/src/components/delivery/delivery.ts",
+      "apps/kidify-api/src/components/coupon/coupon.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/components/cart/cart.service.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/order/order.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/address/address.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/payment/payment.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/order/order.module.ts",
+      "apps/kidify-api/src/components/payment/payment.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/payment/payment.resolver.ts": [
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/payment/payment.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/payment/payment.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/product/assistant-search.ts": [
+      "apps/kidify-api/src/libs/enums/product.enum.ts"
+    ],
+    "apps/kidify-api/src/components/product/product-activity.resolver.ts": [
+      "apps/kidify-api/src/libs/dto/like/like.ts",
+      "apps/kidify-api/src/libs/dto/view/view.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/libs/enums/view.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/components/product/product.service.ts"
+    ],
+    "apps/kidify-api/src/components/product/product.module.ts": [
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/components/product/product-activity.resolver.ts",
+      "apps/kidify-api/src/schemas/Like.model.ts",
+      "apps/kidify-api/src/schemas/View.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/schemas/Brand.model.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/like/like.module.ts",
+      "apps/kidify-api/src/components/view/view.module.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/product/product.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/product/product.resolver.ts": [
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/without.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/product/product.rules.ts": [
+      "apps/kidify-api/src/components/product/product.ts"
+    ],
+    "apps/kidify-api/src/components/product/product.service.ts": [
+      "apps/kidify-api/src/components/product/assistant-search.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/brand/brand.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/components/view/view.service.ts",
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/enums/view.enum.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts",
+      "apps/kidify-api/src/libs/enums/notification.enum.ts",
+      "apps/kidify-api/src/components/product/product.rules.ts"
+    ],
+    "apps/kidify-api/src/components/product/product.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/dto/like/like.ts"
+    ],
+    "apps/kidify-api/src/components/review/review.module.ts": [
+      "apps/kidify-api/src/components/like/like.module.ts",
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Review.model.ts",
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/components/review/review.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/review/review.resolver.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/review/review.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/review/review.service.ts": [
+      "apps/kidify-api/src/components/like/like.service.ts",
+      "apps/kidify-api/src/libs/enums/like.enum.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/review/review.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/review/review.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/seller-code/seller-code.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/seller-code/seller-code.resolver.ts": [
+      "apps/kidify-api/src/components/seller-code/seller-code.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/seller-code/seller-code.service.ts": [
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/seller-code/seller-code.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts"
+    ],
+    "apps/kidify-api/src/components/support/support.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/schemas/Support.model.ts",
+      "apps/kidify-api/src/schemas/Order.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/components/support/support.service.ts",
+      "apps/kidify-api/src/components/support/support.resolver.ts"
+    ],
+    "apps/kidify-api/src/components/support/support.resolver.ts": [
+      "apps/kidify-api/src/components/support/support.ts",
+      "apps/kidify-api/src/components/support/support.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/auth/guards/auth.guard.ts",
+      "apps/kidify-api/src/components/auth/guards/roles.guard.ts",
+      "apps/kidify-api/src/components/auth/decorators/roles.decorator.ts",
+      "apps/kidify-api/src/components/auth/decorators/authMember.decorator.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/components/support/support.service.ts": [
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/components/support/support.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/marketplace.ts"
+    ],
+    "apps/kidify-api/src/components/support/support.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/components/view/view.module.ts": [
+      "apps/kidify-api/src/components/view/view.service.ts",
+      "apps/kidify-api/src/schemas/View.model.ts"
+    ],
+    "apps/kidify-api/src/components/view/view.service.ts": [
+      "apps/kidify-api/src/libs/dto/view/view.ts",
+      "apps/kidify-api/src/libs/dto/view/view.input.ts"
+    ],
+    "apps/kidify-api/src/database/database.module.ts": [],
+    "apps/kidify-api/src/libs/config.ts": [
+      "apps/kidify-api/src/libs/types/common.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/board-article/board-article.input.ts": [
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/board-article/board-article.ts": [
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/dto/like/like.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/board-article/board-article.update.ts": [
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/comment/comment.input.ts": [
+      "apps/kidify-api/src/libs/enums/comment.enum.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts",
+      "apps/kidify-api/src/libs/config.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/comment/comment.ts": [
+      "apps/kidify-api/src/libs/enums/comment.enum.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/comment/comment.update.ts": [
+      "apps/kidify-api/src/libs/enums/comment.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/follow/follow.input.ts": [],
+    "apps/kidify-api/src/libs/dto/follow/follow.ts": [
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/dto/like/like.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/like/like.input.ts": [
+      "apps/kidify-api/src/libs/enums/like.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/like/like.ts": [
+      "apps/kidify-api/src/libs/enums/like.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/member/member.input.ts": [
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/libs/enums/common.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/member/member.ts": [
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/dto/like/like.ts",
+      "apps/kidify-api/src/libs/dto/follow/follow.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/member/member.update.ts": [
+      "apps/kidify-api/src/libs/enums/member.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/view/view.input.ts": [
+      "apps/kidify-api/src/libs/enums/view.enum.ts"
+    ],
+    "apps/kidify-api/src/libs/dto/view/view.ts": [],
+    "apps/kidify-api/src/libs/enums/board-article.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/comment.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/common.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/intersepter/loggingIntercepter.ts": [],
+    "apps/kidify-api/src/libs/enums/like.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/marketplace.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/member.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/notification.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/product.enum.ts": [],
+    "apps/kidify-api/src/libs/enums/view.enum.ts": [],
+    "apps/kidify-api/src/libs/marketplace.ts": [],
+    "apps/kidify-api/src/libs/types/common.ts": [],
+    "apps/kidify-api/src/libs/upload.ts": [
+      "apps/kidify-api/src/libs/config.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts"
+    ],
+    "apps/kidify-api/src/main.ts": [
+      "apps/kidify-api/src/components/auth/auth-http.ts",
+      "apps/kidify-api/src/app.module.ts",
+      "apps/kidify-api/src/libs/enums/intersepter/loggingIntercepter.ts"
+    ],
+    "apps/kidify-api/src/schemas/Address.model.ts": [],
+    "apps/kidify-api/src/schemas/BoardArticle.model.ts": [
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Brand.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Cart.model.ts": [],
+    "apps/kidify-api/src/schemas/Comment.model.ts": [
+      "apps/kidify-api/src/libs/enums/comment.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Coupon.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Delivery.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Event.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/FAQ.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Follow.model.ts": [],
+    "apps/kidify-api/src/schemas/Like.model.ts": [
+      "apps/kidify-api/src/libs/enums/like.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Member.model.ts": [
+      "apps/kidify-api/src/libs/enums/member.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Message.model.ts": [],
+    "apps/kidify-api/src/schemas/Notification.model.ts": [
+      "apps/kidify-api/src/libs/enums/notification.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Order.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Payment.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Product.model.ts": [
+      "apps/kidify-api/src/libs/enums/product.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Review.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/Support.model.ts": [
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/schemas/View.model.ts": [
+      "apps/kidify-api/src/libs/enums/view.enum.ts"
+    ],
+    "apps/kidify-api/src/socket/socket.gateway.ts": [
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/components/auth/auth-http.ts",
+      "apps/kidify-api/src/components/message/message.service.ts",
+      "apps/kidify-api/src/components/message/chat-assistant.service.ts",
+      "apps/kidify-api/src/components/message/message.ts"
+    ],
+    "apps/kidify-api/src/socket/socket.module.ts": [
+      "apps/kidify-api/src/components/auth/auth.module.ts",
+      "apps/kidify-api/src/components/message/message.module.ts",
+      "apps/kidify-api/src/socket/socket.gateway.ts"
+    ],
+    "apps/kidify-api/src/testing/auth-commerce.spec.ts": [
+      "apps/kidify-api/src/testing/offline-app.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/components/review/review.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/components/address/address.service.ts",
+      "apps/kidify-api/src/components/address/address.ts"
+    ],
+    "apps/kidify-api/src/testing/authorization.spec.ts": [
+      "apps/kidify-api/src/testing/offline-app.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/dashboard/dashboard.service.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/components/support/support.service.ts"
+    ],
+    "apps/kidify-api/src/testing/chat-assistant.spec.ts": [
+      "apps/kidify-api/src/components/message/chat-assistant.service.ts",
+      "apps/kidify-api/src/components/product/assistant-search.ts",
+      "apps/kidify-api/src/components/product/product.service.ts"
+    ],
+    "apps/kidify-api/src/testing/chat-realtime.spec.ts": [
+      "apps/kidify-api/src/components/message/message.service.ts",
+      "apps/kidify-api/src/socket/socket.gateway.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/components/message/chat-assistant.service.ts"
+    ],
+    "apps/kidify-api/src/testing/checkout.spec.ts": [
+      "apps/kidify-api/src/testing/offline-app.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/components/order/order.ts",
+      "apps/kidify-api/src/components/cart/cart.ts",
+      "apps/kidify-api/src/components/address/address.ts",
+      "apps/kidify-api/src/components/payment/payment.ts",
+      "apps/kidify-api/src/components/delivery/delivery.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/components/coupon/coupon.ts",
+      "apps/kidify-api/src/components/notification/notification.service.ts"
+    ],
+    "apps/kidify-api/src/testing/creation-validation.spec.ts": [
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/components/seller-code/seller-code.service.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/dto/board-article/board-article.input.ts",
+      "apps/kidify-api/src/libs/enums/board-article.enum.ts"
+    ],
+    "apps/kidify-api/src/testing/kidify-refinements.spec.ts": [
+      "apps/kidify-api/src/components/product/product.rules.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/support/support.ts",
+      "apps/kidify-api/src/components/support/support.service.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-batch/src/kidify-batch.service.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/testing/marketplace.spec.ts": [
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/product/product.ts",
+      "apps/kidify-api/src/libs/enums/product.enum.ts",
+      "apps/kidify-api/src/components/coupon/coupon.ts",
+      "apps/kidify-api/src/components/coupon/coupon.service.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/libs/marketplace.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts"
+    ],
+    "apps/kidify-api/src/testing/offline-app.ts": [
+      "apps/kidify-api/src/app.module.ts",
+      "apps/kidify-api/src/database/database.module.ts"
+    ],
+    "apps/kidify-api/src/testing/refresh-auth.spec.ts": [
+      "apps/kidify-api/src/components/auth/refresh-session.service.ts",
+      "apps/kidify-api/src/components/auth/auth.service.ts",
+      "apps/kidify-api/src/components/auth/auth.resolver.ts",
+      "apps/kidify-api/src/components/member/member.resolver.ts",
+      "apps/kidify-api/src/components/auth/auth-http.ts"
+    ],
+    "apps/kidify-api/src/testing/remaining-fixes.spec.ts": [
+      "apps/kidify-api/src/components/follow/follow.service.ts",
+      "apps/kidify-api/src/components/review/review.service.ts",
+      "apps/kidify-api/src/components/comment/comment.service.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts"
+    ],
+    "apps/kidify-api/src/testing/schema.spec.ts": [
+      "apps/kidify-api/src/testing/offline-app.ts"
+    ],
+    "apps/kidify-api/src/testing/self-member-actions.spec.ts": [
+      "apps/kidify-api/src/components/member/member.service.ts",
+      "apps/kidify-api/src/components/follow/follow.service.ts"
+    ],
+    "apps/kidify-api/src/testing/seller-fulfillment.spec.ts": [
+      "apps/kidify-api/src/components/order/order.service.ts",
+      "apps/kidify-api/src/libs/enums/marketplace.enum.ts",
+      "apps/kidify-api/src/libs/enums/member.enum.ts",
+      "apps/kidify-api/src/components/comment/comment.service.ts"
+    ],
+    "apps/kidify-api/test/app.e2e-spec.ts": [
+      "apps/kidify-api/src/app.controller.ts",
+      "apps/kidify-api/src/app.service.ts"
+    ],
+    "apps/kidify-batch/src/database/database.module.ts": [],
+    "apps/kidify-batch/src/kidify-batch.controller.ts": [
+      "apps/kidify-batch/src/kidify-batch.service.ts",
+      "apps/kidify-batch/src/lib/config.ts"
+    ],
+    "apps/kidify-batch/src/kidify-batch.module.ts": [
+      "apps/kidify-batch/src/kidify-batch.controller.ts",
+      "apps/kidify-batch/src/kidify-batch.service.ts",
+      "apps/kidify-batch/src/database/database.module.ts",
+      "apps/kidify-api/src/schemas/Like.model.ts",
+      "apps/kidify-api/src/schemas/Notification.model.ts",
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts"
+    ],
+    "apps/kidify-batch/src/kidify-batch.service.ts": [
+      "apps/kidify-api/src/components/product/product.rules.ts",
+      "apps/kidify-api/src/libs/dto/member/member.ts",
+      "apps/kidify-api/src/components/product/product.ts"
+    ],
+    "apps/kidify-batch/src/lib/config.ts": [],
+    "apps/kidify-batch/src/main.ts": [
+      "apps/kidify-batch/src/kidify-batch.module.ts",
+      "apps/kidify-api/src/libs/enums/intersepter/loggingIntercepter.ts"
+    ],
+    "apps/kidify-batch/test/app.e2e-spec.ts": [
+      "apps/kidify-batch/src/kidify-batch.controller.ts",
+      "apps/kidify-batch/src/kidify-batch.service.ts"
+    ],
+    "eslint.config.mjs": [],
+    "scripts/audit-chat-products.ts": [
+      "apps/kidify-api/src/schemas/Product.model.ts",
+      "apps/kidify-api/src/schemas/Member.model.ts",
+      "apps/kidify-api/src/schemas/Brand.model.ts",
+      "apps/kidify-api/src/components/product/product.service.ts",
+      "apps/kidify-api/src/components/message/chat-assistant.service.ts",
+      "apps/kidify-api/src/components/product/assistant-search.ts"
+    ],
+    "scripts/bootstrap-admin.ts": [
+      "apps/kidify-api/src/schemas/Member.model.ts"
+    ],
+    "scripts/migrate-dianora.ts": [],
+    "scripts/verify-schema.ts": [
+      "apps/kidify-api/src/testing/offline-app.ts"
+    ]
+  }
+}

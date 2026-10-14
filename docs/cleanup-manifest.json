@@ -1,0 +1,380 @@
+{
+  "frontend_deleted": [
+    "apollo/admin/mutation.ts",
+    "apollo/admin/query.ts",
+    "apollo/user/mutation.ts",
+    "apollo/user/query.ts",
+    "libs/components/admin/AdminMenuList.tsx",
+    "libs/components/admin/community/CommunityArticleList.tsx",
+    "libs/components/admin/cs/FaqList.tsx",
+    "libs/components/admin/cs/InquiryList.tsx",
+    "libs/components/admin/cs/NoticeList.tsx",
+    "libs/components/admin/properties/PropertyList.tsx",
+    "libs/components/admin/users/MemberList.tsx",
+    "libs/components/agent/ReviewCard.tsx",
+    "libs/components/common/AgentCard.tsx",
+    "libs/components/common/CommunityCard.tsx",
+    "libs/components/common/FiberContainer.tsx",
+    "libs/components/common/PropertyBigCard.tsx",
+    "libs/components/common/ScrollControls.tsx",
+    "libs/components/community/Teditor.tsx",
+    "libs/components/cs/Faq.tsx",
+    "libs/components/cs/Inquiry.tsx",
+    "libs/components/cs/Notice.tsx",
+    "libs/components/homepage/Advertisement.tsx",
+    "libs/components/homepage/CommunityBoards.tsx",
+    "libs/components/homepage/CommunityCard.tsx",
+    "libs/components/homepage/Events.tsx",
+    "libs/components/homepage/HeaderFilter.tsx",
+    "libs/components/homepage/PopularProperties.tsx",
+    "libs/components/homepage/PopularPropertyCard.tsx",
+    "libs/components/homepage/SaleVideo.tsx",
+    "libs/components/homepage/TopAgentCard.tsx",
+    "libs/components/homepage/TopAgents.tsx",
+    "libs/components/homepage/TopProperties.tsx",
+    "libs/components/homepage/TopPropertyCard.tsx",
+    "libs/components/homepage/TrendProperties.tsx",
+    "libs/components/homepage/TrendPropertyCard.tsx",
+    "libs/components/layout/LayoutAdmin.tsx",
+    "libs/components/member/MemberArticles.tsx",
+    "libs/components/member/MemberFollowers.tsx",
+    "libs/components/member/MemberFollowings.tsx",
+    "libs/components/member/MemberMenu.tsx",
+    "libs/components/member/MemberProperties.tsx",
+    "libs/components/mypage/AddNewProperty.tsx",
+    "libs/components/mypage/Article.tsx",
+    "libs/components/mypage/MyArticles.tsx",
+    "libs/components/mypage/MyFavorites.tsx",
+    "libs/components/mypage/MyMenu.tsx",
+    "libs/components/mypage/MyProfile.tsx",
+    "libs/components/mypage/MyProperties.tsx",
+    "libs/components/mypage/PropertyCard.tsx",
+    "libs/components/mypage/RecentlyVisited.tsx",
+    "libs/components/mypage/WriteArticle.tsx",
+    "libs/components/property/Filter.tsx",
+    "libs/components/property/PropertyCard.tsx",
+    "libs/components/property/Review.tsx",
+    "libs/enums/board-article.enum.ts",
+    "libs/enums/comment.enum.ts",
+    "libs/enums/common.enum.ts",
+    "libs/enums/like.enum.ts",
+    "libs/enums/member.enum.ts",
+    "libs/enums/notice.enum.ts",
+    "libs/enums/notification.enum.ts",
+    "libs/enums/property.enum.ts",
+    "libs/enums/view.enum.ts",
+    "libs/hooks/useDeviceDetect.ts",
+    "libs/types/board-article/board-article.input.ts",
+    "libs/types/board-article/board-article.ts",
+    "libs/types/board-article/board-article.update.ts",
+    "libs/types/comment/comment.input.ts",
+    "libs/types/comment/comment.ts",
+    "libs/types/comment/comment.update.ts",
+    "libs/types/common.ts",
+    "libs/types/follow/follow.input.ts",
+    "libs/types/follow/follow.ts",
+    "libs/types/like/like.input.ts",
+    "libs/types/like/like.ts",
+    "libs/types/member/member.input.ts",
+    "libs/types/member/member.ts",
+    "libs/types/member/member.update.ts",
+    "libs/types/property/property.input.ts",
+    "libs/types/property/property.ts",
+    "libs/types/property/property.update.ts",
+    "libs/types/view/view.input.ts",
+    "libs/types/view/view.ts",
+    "libs/utils.ts",
+    "scss/MaterialTheme/styled.ts",
+    "scss/mobile/general.scss",
+    "scss/pc/community/community.scss",
+    "scss/pc/community/detail.scss",
+    "scss/pc/member/memberArticles.scss",
+    "scss/pc/member/memberFollows.scss",
+    "scss/pc/member/memberPage.scss",
+    "scss/pc/member/memberProperties.scss",
+    "scss/pc/mypage/addNewProperty.scss",
+    "scss/pc/mypage/myArticles.scss",
+    "scss/pc/mypage/myFavorites.scss",
+    "scss/pc/mypage/myProfile.scss",
+    "scss/pc/mypage/myProperties.scss",
+    "scss/pc/mypage/mySaved.scss",
+    "scss/pc/mypage/mypage.scss",
+    "scss/pc/mypage/writeArticle.scss",
+    "scss/pc/property/detail.scss",
+    "scss/pc/property/property.scss"
+  ],
+  "backend_deleted": [
+    "apps/nestar-api/src/components/property/property.module.ts",
+    "apps/nestar-api/src/components/property/property.resolver.ts",
+    "apps/nestar-api/src/components/property/property.service.ts",
+    "apps/nestar-api/src/libs/dto/property/property.input.ts",
+    "apps/nestar-api/src/libs/dto/property/property.ts",
+    "apps/nestar-api/src/libs/dto/property/property.update.ts",
+    "apps/nestar-api/src/libs/enums/notice.enum.ts",
+    "apps/nestar-api/src/libs/enums/property.enum.ts",
+    "apps/nestar-api/src/schemas/Notice.model.ts",
+    "apps/nestar-api/src/schemas/Property.model.ts"
+  ],
+  "styles_evidence": [
+    {
+      "file": "scss/pc/community/community.scss",
+      "selectors": 23,
+      "rootIds": [
+        "#pc-wrap",
+        "#community-list-page"
+      ]
+    },
+    {
+      "file": "scss/pc/community/detail.scss",
+      "selectors": 54,
+      "rootIds": [
+        "#pc-wrap",
+        "#community-detail-page"
+      ]
+    },
+    {
+      "file": "scss/pc/member/memberArticles.scss",
+      "selectors": 8,
+      "rootIds": [
+        "#pc-wrap",
+        "#member-articles-page"
+      ]
+    },
+    {
+      "file": "scss/pc/member/memberFollows.scss",
+      "selectors": 24,
+      "rootIds": [
+        "#pc-wrap",
+        "#member-follows-page"
+      ]
+    },
+    {
+      "file": "scss/pc/member/memberPage.scss",
+      "selectors": 30,
+      "rootIds": [
+        "#pc-wrap",
+        "#member-page"
+      ]
+    },
+    {
+      "file": "scss/pc/member/memberProperties.scss",
+      "selectors": 24,
+      "rootIds": [
+        "#pc-wrap",
+        "#member-page",
+        "#member-properties-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/addNewProperty.scss",
+      "selectors": 70,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page",
+        "#add-property-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/myArticles.scss",
+      "selectors": 8,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-articles-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/myFavorites.scss",
+      "selectors": 32,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page",
+        "#my-favorites-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/myProfile.scss",
+      "selectors": 45,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page",
+        "#my-profile-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/myProperties.scss",
+      "selectors": 33,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page",
+        "#my-property-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/mySaved.scss",
+      "selectors": 19,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page",
+        "#my-saved-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/mypage.scss",
+      "selectors": 50,
+      "rootIds": [
+        "#pc-wrap",
+        "#my-page"
+      ]
+    },
+    {
+      "file": "scss/pc/mypage/writeArticle.scss",
+      "selectors": 18,
+      "rootIds": [
+        "#pc-wrap",
+        "#write-article-page"
+      ]
+    },
+    {
+      "file": "scss/pc/property/detail.scss",
+      "selectors": 113,
+      "rootIds": [
+        "#pc-wrap",
+        "#property-detail-page"
+      ]
+    },
+    {
+      "file": "scss/pc/property/property.scss",
+      "selectors": 59,
+      "rootIds": [
+        "#pc-wrap",
+        "#property-list-page"
+      ]
+    }
+  ],
+  "frontend_baseline": "528f071e4faa8cc9309588e2b3ead55b5bc24fc7",
+  "backend_baseline": "f9e5c90724fcf11d44953f9552baa0cf07de1117",
+  "backup": "/tmp/kidify-cleanup-backup-20261014082246",
+  "frontend_removed_dependencies": {
+    "@apollo/react-components": "^4.0.0-beta.2",
+    "@babel/plugin-proposal-private-methods": "^7.16.11",
+    "@cahil/utils": "^2.3.2",
+    "@date-io/date-fns": "^2.14.0",
+    "@mui/lab": "^5.0.0-alpha.85",
+    "@mui/styles": "^5.5.3",
+    "@mui/x-date-pickers-pro": "^5.0.0-beta.0",
+    "@toast-ui/editor-plugin-color-syntax": "^3.0.3",
+    "@toast-ui/editor-plugin-table-merged-cell": "^3.0.2",
+    "apollo-link-token-refresh": "^0.4.0",
+    "assert": "^2.0.0",
+    "axios": "^0.27.2",
+    "browser-image-compression": "^2.0.0",
+    "chart.js": "^3.8.0",
+    "date-fns": "^2.28.0",
+    "js-cookie": "^3.0.1",
+    "material-ui-pickers": "^2.2.4",
+    "material-ui-popup-state": "^4.0.1",
+    "moment": "^2.29.3",
+    "next-images": "^1.8.4",
+    "notistack": "^2.0.5",
+    "nouislider-react": "^3.4.1",
+    "phosphor-react": "^1.4.1",
+    "react-cookie": "^4.1.1",
+    "react-icons": "^4.4.0",
+    "react-moment": "^1.1.2",
+    "react-slick": "^0.28.1",
+    "react-spring": "^9.4.5",
+    "react-telegram-auth": "^1.0.3",
+    "react-tree": "^0.0.4",
+    "sass-loader": "^12.6.0",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^5.3.3",
+    "styled-jsx": "^5.0.0",
+    "subscriptions-transport-ws": "^0.9.19",
+    "view": "^1.1.1",
+    "@pmndrs/branding": "0.0.8",
+    "@react-three/drei": "9.58.5",
+    "@react-three/fiber": "8.12.0",
+    "@types/three": "0.150.0",
+    "three": "0.150.1",
+    "valtio": "1.10.3",
+    "react-scripts": "4.0.3",
+    "numeral": "^2.0.6",
+    "react-scrollable-feed": "^1.3.2"
+  },
+  "frontend_removed_dev_dependencies": {
+    "@types/numeral": "^2.0.2",
+    "@types/assert": "^1.5.6",
+    "@types/axios": "^0.14.0",
+    "@types/js-cookie": "^3.0.2",
+    "@types/react-beautiful-dnd": "^13.1.2",
+    "@types/react-icons": "^3.0.0",
+    "@types/react-slick": "^0.23.8",
+    "@types/styled-components": "^5.1.23",
+    "babel-plugin-import": "^1.13.3",
+    "babel-plugin-styled-components": "^2.0.6"
+  },
+  "backend_removed_dependencies": {
+    "moment": "^2.29.4",
+    "uuid": "^9.0.1"
+  },
+  "validation": {
+    "frontend": {
+      "typecheck": "passed",
+      "tests": "7 test files passed, including Logout regressions",
+      "lint": "passed with 11 existing warnings",
+      "productionBuild": "passed (.next-cleanup-delivery)",
+      "frozenOfflineInstall": "passed"
+    },
+    "backend": {
+      "typecheck": "passed",
+      "lint": "passed",
+      "tests": {
+        "suites": 13,
+        "tests": 129,
+        "result": "passed"
+      },
+      "apiBuild": "passed",
+      "batchBuild": "passed",
+      "schema": "byte-identical to pre-cleanup schema: 59 queries, 74 mutations"
+    },
+    "importGraph": {
+      "frontendReachableSourceFiles": 120,
+      "backendReachableSourceFiles": 179,
+      "unreachable": 0,
+      "unresolvedImports": 0,
+      "nonLiteralDynamicImports": 0
+    }
+  },
+  "frontend_added_explicit_dependencies": {
+    "@toast-ui/editor": "^3.2.2",
+    "jsdom": "^16.4.0 (devDependency)"
+  },
+  "lockfile": {
+    "frontendBlocksBefore": 2020,
+    "frontendBlocksAfter": 585,
+    "unresolvedSelectors": 0,
+    "backend": "npm package-lock-only and prune offline passed"
+  },
+  "preserved": [
+    "All assets, uploads and database records",
+    "External URLs, Git remotes, deployment environment keys/values and database/collection names",
+    "Historical PROPERTY enum and Notification.propertyId compatibility",
+    "Compatibility routes and aliases",
+    "Physical checkout directory names and uncertain shared styles"
+  ],
+  "additional_user_request": "Sign out renamed Logout; block refresh after session clear, await in-flight refresh before cookie revocation, serialize with refresh lock, deduplicate Logout requests, ignore stale getMe results, bound cookie request duration, preserve Logout retry on transport errors.",
+  "unused_export_cleanup": {
+    "file": "libs/sweetAlert.ts",
+    "removed": [
+      "sweetErrorHandling",
+      "sweetTopSuccessAlert",
+      "sweetContactAlert",
+      "sweetLoginConfirmAlert",
+      "sweetMixinErrorAlert",
+      "sweetBasicAlert",
+      "sweetErrorHandlingForAdmin",
+      "sweetTopSmallSuccessAlert"
+    ],
+    "alsoRemoved": "unused Messages constants from libs/config.ts"
+  }
+}
