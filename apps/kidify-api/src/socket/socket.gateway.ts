@@ -297,7 +297,7 @@ export class SocketGateway implements OnGatewayInit, OnModuleDestroy {
             throw new Error("INVALID_MESSAGE");
           const controller = new AbortController();
           this.streams.set(client, controller);
-          const timeout = setTimeout(() => controller.abort(), 45000);
+          const timeout = setTimeout(() => controller.abort(), process.env.CHAT_AI_PROVIDER === "ollama" ? 120000 : 45000);
           try {
             result = await this.assistant.answer(
               actor,

@@ -15,17 +15,17 @@ describe("AI catalog tool boundary", () => {
   let service: ChatAssistantService, products: any, orders: any, quotas: any;
   const originalFetch = global.fetch,
     originalKey = process.env.OPENAI_API_KEY,
-    originalModel = process.env.OPENAI_CHAT_MODEL;
+    originalModel = process.env.OPENAI_CHAT_MODEL,
+    originalProvider = process.env.CHAT_AI_PROVIDER,
+    originalOllamaModel = process.env.OLLAMA_CHAT_MODEL;
   beforeEach(() => {
     products = { searchForAssistant: jest.fn().mockResolvedValue([product]) };
     orders = {
-      find: jest
-        .fn()
-        .mockReturnValue({
-          select: () => ({
-            sort: () => ({ limit: () => ({ lean: async () => [] }) }),
-          }),
+      find: jest.fn().mockReturnValue({
+        select: () => ({
+          sort: () => ({ limit: () => ({ lean: async () => [] }) }),
         }),
+      }),
     };
     quotas = { quota: jest.fn().mockResolvedValue(undefined) };
     service = new ChatAssistantService(products, orders, quotas);
@@ -33,8 +33,13 @@ describe("AI catalog tool boundary", () => {
     jest.spyOn(Logger.prototype, "error").mockImplementation(() => {});
     process.env.OPENAI_API_KEY = "test-not-a-real-key";
     process.env.OPENAI_CHAT_MODEL = "test-model";
+    process.env.CHAT_AI_PROVIDER = "openai";
   });
   afterEach(() => {
+    if (originalProvider === undefined) delete process.env.CHAT_AI_PROVIDER;
+    else process.env.CHAT_AI_PROVIDER = originalProvider;
+    if (originalOllamaModel === undefined) delete process.env.OLLAMA_CHAT_MODEL;
+    else process.env.OLLAMA_CHAT_MODEL = originalOllamaModel;
     jest.restoreAllMocks();
     global.fetch = originalFetch;
     if (originalKey === undefined) delete process.env.OPENAI_API_KEY;
@@ -205,23 +210,21 @@ describe("AI catalog tool boundary", () => {
   );
   it("zero results are explicit and do not invoke a second model call", async () => {
     products.searchForAssistant.mockResolvedValue([]);
-    global.fetch = jest
-      .fn()
-      .mockResolvedValue(
-        new Response(
-          JSON.stringify({
-            status: "completed",
-            output: [
-              {
-                type: "function_call",
-                name: "search_products",
-                call_id: "one",
-                arguments: "{}",
-              },
-            ],
-          }),
-        ),
-      );
+    global.fetch = jest.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          status: "completed",
+          output: [
+            {
+              type: "function_call",
+              name: "search_products",
+              call_id: "one",
+              arguments: "{}",
+            },
+          ],
+        }),
+      ),
+    );
     const emit = jest.fn();
     await service.answer(
       actor,
@@ -233,6 +236,104 @@ describe("AI catalog tool boundary", () => {
       "aiDelta",
       expect.stringContaining("No available products match"),
     );
+    expect(global.fetch).toHaveBeenCalledTimes(1);
+  });
+  it("uses local Ollama with no API key and returns validated catalog cards", async () => {
+    process.env.CHAT_AI_PROVIDER = "ollama";
+    process.env.OLLAMA_CHAT_MODEL = "qwen2.5:3b";
+    delete process.env.OPENAI_API_KEY;
+    global.fetch = jest
+      .fn()
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            done: true,
+            message: {
+              role: "assistant",
+              content: "",
+              tool_calls: [
+                {
+                  function: {
+                    name: "search_products",
+                    arguments: { ageMonth: 24, category: "CLOTHING" },
+                  },
+                },
+              ],
+            },
+          }),
+        ),
+      )
+      .mockResolvedValueOnce(
+        new Response(
+          JSON.stringify({
+            done: true,
+            message: {
+              content:
+                "<think>Internal planning</think>Found matching products.",
+            },
+          }),
+        ),
+      );
+    const emit = jest.fn();
+    await service.answer(
+      actor,
+      { text: "2 yoshga kiyim", locale: "uz", action: "products" },
+      emit,
+      new AbortController().signal,
+    );
+    expect(products.searchForAssistant).toHaveBeenCalledWith({
+      ageMonth: 24,
+      type: "CLOTHING",
+    });
+    expect(emit).toHaveBeenCalledWith("aiProducts", [product]);
+    expect(emit).toHaveBeenCalledWith("aiDelta", "Found matching products.");
+    for (const [url, options] of (global.fetch as jest.Mock).mock.calls) {
+      expect(url).toBe("http://127.0.0.1:11434/api/chat");
+      expect(options.headers.Authorization).toBeUndefined();
+    }
+  });
+  it("rejects a local model attempting an unoffered tool before accessing the database", async () => {
+    process.env.CHAT_AI_PROVIDER = "ollama";
+    process.env.OLLAMA_CHAT_MODEL = "qwen2.5:3b";
+    global.fetch = jest.fn().mockResolvedValue(
+      new Response(
+        JSON.stringify({
+          done: true,
+          message: {
+            tool_calls: [
+              {
+                function: {
+                  name: "get_my_orders",
+                  arguments: { orderId: null },
+                },
+              },
+            ],
+          },
+        }),
+      ),
+    );
+    await expect(
+      service.answer(
+        actor,
+        { text: "products", locale: "en", action: "products" },
+        jest.fn(),
+        new AbortController().signal,
+      ),
+    ).rejects.toThrow("AI_PROVIDER_ERROR");
+    expect(orders.find).not.toHaveBeenCalled();
+  });
+  it("fails clearly when Ollama is offline instead of falling back to a paid provider", async () => {
+    process.env.CHAT_AI_PROVIDER = "ollama";
+    process.env.OLLAMA_CHAT_MODEL = "qwen2.5:3b";
+    global.fetch = jest.fn().mockRejectedValue(new TypeError("offline"));
+    await expect(
+      service.answer(
+        actor,
+        { text: "hello", locale: "en" },
+        jest.fn(),
+        new AbortController().signal,
+      ),
+    ).rejects.toThrow("AI_PROVIDER_ERROR");
     expect(global.fetch).toHaveBeenCalledTimes(1);
   });
 });

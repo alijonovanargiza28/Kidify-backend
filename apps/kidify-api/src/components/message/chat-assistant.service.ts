@@ -15,6 +15,8 @@ import {
   validateAssistantSearch,
 } from "../product/assistant-search";
 
+import { ProductCategory, ProductType } from "../../libs/enums/product.enum";
+
 const orderTool = {
   type: "function",
   name: "get_my_orders",
@@ -176,6 +178,145 @@ export class ChatAssistantService {
     }
     return response;
   }
+  private async ollamaAnswer(
+    actor: Member,
+    input: { text: string; locale: string },
+    instructions: string,
+    selected: string | undefined,
+    emit: (event: string, data: any) => void,
+    signal: AbortSignal,
+    trace: string,
+  ) {
+    const tools = [productSearchTool, orderTool, helpTool]
+      .filter((tool) => !selected || tool.name === selected)
+      .map((tool) => ({
+        type: "function",
+        function: {
+          name: tool.name,
+          description: tool.description,
+          parameters: tool.parameters,
+        },
+      }));
+    const messages: any[] = [
+      {
+        role: "system",
+        content:
+          instructions +
+          ` First call exactly one available tool. Do not answer before calling a tool. Only set filters explicitly requested by the customer; ALL other filters MUST be null. A broad request such as "Find available products", "Show products", or "Mahsulotlarni korsat" MUST call search_products with {"text":null,"type":null,"category":null,"collection":null,"ageMonth":null,"size":null,"color":null,"brand":null,"minPrice":null,"maxPrice":null}. For "2 yoshli bola uchun kiyim" use ageMonth=24, type=CLOTHING, all other filters null. Language mappings: kiyim, clothes, clothing, 옷 mean type=CLOTHING; yosh means years, so multiply by 12 for ageMonth. Never invent an age, collection, category, color or product keyword. After a tool result, answer in at most three short sentences; product cards already show all details.`,
+      },
+      { role: "user", content: input.text },
+    ];
+    const chat = async (body: any) => {
+      try {
+        const response = await fetch(
+          `${(process.env.OLLAMA_BASE_URL || "http://127.0.0.1:11434").replace(/\/$/, "")}/api/chat`,
+          {
+            method: "POST",
+            signal,
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({
+              model: process.env.OLLAMA_CHAT_MODEL,
+              stream: false,
+              think: false,
+              options: { temperature: 0, num_predict: 1200, num_ctx: 8192 },
+              ...body,
+            }),
+          },
+        );
+        if (!response.ok) {
+          this.logger.error(
+            JSON.stringify({
+              event: "AI_OLLAMA_API_ERROR",
+              trace,
+              status: response.status,
+            }),
+          );
+          throw new Error("OLLAMA_REQUEST_FAILED");
+        }
+        const result = await response.json();
+        if (!result.done || result.done_reason === "length" || result.error)
+          throw new Error("OLLAMA_INCOMPLETE");
+        return result.message;
+      } catch (error) {
+        this.logger.error(
+          JSON.stringify({
+            event: "AI_OLLAMA_ERROR",
+            trace,
+            errorType: error?.name,
+          }),
+        );
+        throw new ServiceUnavailableException("AI_PROVIDER_ERROR");
+      }
+    };
+    const plan = await chat({ messages, tools });
+    const calls = plan?.tool_calls;
+    if (
+      !Array.isArray(calls) ||
+      calls.length !== 1 ||
+      !tools.some((tool) => tool.function.name === calls[0]?.function?.name)
+    )
+      throw new ServiceUnavailableException("AI_PROVIDER_ERROR");
+    const call = calls[0].function;
+    let args = call.arguments;
+    if (
+      call.name === "search_products" &&
+      args &&
+      typeof args === "object" &&
+      !Array.isArray(args)
+    ) {
+      args = { ...args };
+      // Move only a recognized type out of an invalid category slot.
+      // Unknown values still fail the shared validator.
+      if (
+        typeof args.category === "string" &&
+        !(Object.values(ProductCategory) as string[]).includes(args.category) &&
+        (Object.values(ProductType) as string[]).includes(args.category) &&
+        (args.type == null || args.type === args.category)
+      ) {
+        args.type = args.category;
+        args.category = null;
+      }
+    }
+    const result = await this.executeTool(actor, call.name, args, trace);
+    if ("products" in result) {
+      emit("aiProducts", result.products);
+      if (!result.products.length) {
+        emit("aiDelta", noResults[input.locale]);
+        return true;
+      }
+    }
+    messages.push(plan, {
+      role: "tool",
+      tool_name: call.name,
+      content: JSON.stringify(result),
+    });
+    const language = {
+      en: "English",
+      ko: "Korean (한국어)",
+      uz: "Uzbek (O‘zbek tili, lotin yozuvi)",
+    }[input.locale];
+    messages[0] = {
+      role: "system",
+      content:
+        instructions +
+        ` You have already received verified tool results. Answer the customer's original question directly, ONLY in ${language}. Use at most two short sentences. Do not list products, prices, stock or variants: the product cards show them. For a greeting, greet the customer and offer to find products or check their orders. Never say the customer must contact support just to search products. For unknown store policies offer Contact CS.`,
+    };
+    const reply = await chat({ messages });
+    if (
+      typeof reply?.content !== "string" ||
+      !reply.content.trim() ||
+      reply.tool_calls?.length
+    )
+      throw new ServiceUnavailableException("AI_PROVIDER_ERROR");
+    const text = reply.content
+      .split("</think>")
+      .pop()!
+      .replace(/<think>[\s\S]*$/, "")
+      .trim();
+    if (!text) throw new ServiceUnavailableException("AI_PROVIDER_ERROR");
+    emit("aiDelta", text);
+    return true;
+  }
   async answer(
     actor: Member,
     input: { text: string; locale: string; action?: string },
@@ -190,7 +331,13 @@ export class ChatAssistantService {
       input.text.length > 1000
     )
       throw new BadRequestException("INVALID_MESSAGE");
-    if (!process.env.OPENAI_API_KEY || !process.env.OPENAI_CHAT_MODEL) {
+    const provider = process.env.CHAT_AI_PROVIDER || "openai";
+    if (
+      !["openai", "ollama"].includes(provider) ||
+      (provider === "ollama"
+        ? !process.env.OLLAMA_CHAT_MODEL
+        : !process.env.OPENAI_API_KEY || !process.env.OPENAI_CHAT_MODEL)
+    ) {
       this.logger.error(
         JSON.stringify({
           event: "AI_CONFIGURATION_MISSING",
@@ -223,6 +370,16 @@ export class ChatAssistantService {
       : input.action === "orders"
         ? "get_my_orders"
         : undefined;
+    if (provider === "ollama")
+      return this.ollamaAnswer(
+        actor,
+        input,
+        instructions,
+        selected,
+        emit,
+        signal,
+        trace,
+      );
     const first = await this.api(
       {
         instructions,

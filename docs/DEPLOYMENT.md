@@ -37,3 +37,11 @@ Do not wipe MongoDB or uploaded files. Local checks do not verify the target ser
 ## Database selection
 
 Use a MongoDB URI targeting the `kidify` database. Changing the database path selects a different database; it does not rename or copy the previous database. Existing users, products and orders will not appear unless present in the selected database. Preserve credentials and connection options. No database migration was executed during source cleanup.
+
+## Local AI with Ollama
+
+Install Ollama on the backend host, then run `ollama pull qwen2.5:3b` and keep `ollama serve` running. Configure backend-only `CHAT_AI_PROVIDER=ollama`, `OLLAMA_BASE_URL=http://127.0.0.1:11434`, and `OLLAMA_CHAT_MODEL=qwen2.5:3b`, then restart the API. No OpenAI key or paid API calls are used in this mode. Model downloads and local CPU/RAM are required. Keep Ollama bound to loopback; do not expose port 11434 publicly. AI requests have a 120-second server timeout for local inference. Existing quotas, tool validation and owner-only order access apply.
+
+To restore OpenAI, set `CHAT_AI_PROVIDER=openai` with valid OpenAI credentials and credit.
+
+From the backend folder, `npm run ai:serve` starts the local runtime and `npm run ai:pull` downloads the configured model. These commands use the bundled `.local/ollama/ollama` when present, otherwise the system `ollama`. Keep the AI process running alongside the API.
