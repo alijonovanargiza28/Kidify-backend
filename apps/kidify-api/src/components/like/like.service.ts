@@ -35,7 +35,6 @@ export class LikeService {
 				await this.likeModel.create([input], { session });
 			} catch (err) {
 				if ((err as { code?: number }).code === 11000 && !session) return 0;
-				console.log('Error, Service.model:', err instanceof Error ? err.message : err);
 
 				throw new BadRequestException(Message.CREATE_FAILED);
 			}

@@ -1,0 +1,37 @@
+# Review the paid persistent disk/service in Render before creating resources.
+services:
+  - type: web
+    name: kidify-api
+    runtime: node
+    plan: 0.5c-512mb
+    autoDeployTrigger: "off"
+    buildCommand: npm ci --include=dev && npm run build
+    startCommand: npm run start:prod
+    healthCheckPath: /health/ready
+    disk:
+      name: kidify-uploads
+      mountPath: /var/data
+      sizeGB: 10
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: NODE_ENV
+        value: production
+      - key: UPLOAD_DIR
+        value: /var/data/uploads
+      - key: MONGO_PROD
+        sync: false
+      - key: SECRET_TOKEN
+        generateValue: true
+      - key: CORS_ORIGINS
+        sync: false
+      - key: AUTH_COOKIE_SAME_SITE
+        value: none
+      - key: BATCH_TIMEZONE
+        value: Asia/Tashkent
+      - key: CHAT_AI_PROVIDER
+        value: ollama
+      - key: OLLAMA_BASE_URL
+        sync: false
+      - key: OLLAMA_CHAT_MODEL
+        value: qwen2.5:3b

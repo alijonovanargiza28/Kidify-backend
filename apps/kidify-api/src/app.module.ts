@@ -1,56 +1,49 @@
 // Asosiy app module bugichi
 
-import { Module } from '@nestjs/common';
+import { Module } from "@nestjs/common";
 
-import { AppController } from './app.controller';
+import { AppController } from "./app.controller";
 
-import { AppService } from './app.service';
+import { AppService } from "./app.service";
 
-import { ConfigModule } from '@nestjs/config';
+import { ConfigModule } from "@nestjs/config";
 
-import { GraphQLModule } from '@nestjs/graphql';
-import { ApolloDriver } from '@nestjs/apollo';
+import { GraphQLModule } from "@nestjs/graphql";
+import { ApolloDriver } from "@nestjs/apollo";
 
-import { AppResolver } from './app.resolver';
+import { AppResolver } from "./app.resolver";
 
-import { ComponentsModule } from './components/components.module';
-import { DatabaseModule } from './database/database.module';
+import { ComponentsModule } from "./components/components.module";
+import { DatabaseModule } from "./database/database.module";
 
-import { T } from './libs/types/common';
-import { SocketModule } from './socket/socket.module';
+import { formatGraphqlError } from "./libs/graphql-error";
+import { HealthController } from "./health.controller";
+import { SocketModule } from "./socket/socket.module";
 
 @Module({
-	imports: [
-		ConfigModule.forRoot(), //env
-		GraphQLModule.forRoot({
-			//reast api => Graphql api
-			driver: ApolloDriver,
-			playground: true,
-			uploads: false,
-            csrfPrevention: true,
-			context: ({ req, res }) => ({ req, res }),
-			autoSchemaFile: true,
+  imports: [
+    ConfigModule.forRoot(), //env
+    GraphQLModule.forRoot({
+      //reast api => Graphql api
+      driver: ApolloDriver,
+      playground: process.env.NODE_ENV !== "production",
+      introspection: process.env.NODE_ENV !== "production",
+      includeStacktraceInErrorResponses: false,
+      uploads: false,
+      csrfPrevention: true,
+      context: ({ req, res }) => ({ req, res }),
+      autoSchemaFile: true,
 
-			formatError: (error: T) => {
-				const graphqlFormattedError = {
-					code: error?.extensions?.code,
+      formatError: formatGraphqlError,
+    }),
 
-					message:
-						error?.extensions?.exception?.response?.message || error?.extensions?.response?.message || error?.message,
-				};
+    ComponentsModule,
+    DatabaseModule,
+    SocketModule,
+  ],
 
-				console.log('GRAPHQL GLOBAL ERR:', graphqlFormattedError);
-				return { ...graphqlFormattedError, path: error.path, extensions: { code: graphqlFormattedError.message === 'UNAUTHORIZED' ? 'UNAUTHENTICATED' : error?.extensions?.code || 'INTERNAL_SERVER_ERROR' } };
-			},
-		}),
+  controllers: [AppController, HealthController],
 
-		ComponentsModule,
-		DatabaseModule,
-		SocketModule,
-	],
-
-	controllers: [AppController],
-
-	providers: [AppService, AppResolver],
+  providers: [AppService, AppResolver],
 })
 export class AppModule {}

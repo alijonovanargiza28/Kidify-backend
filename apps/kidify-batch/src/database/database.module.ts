@@ -1,15 +1,18 @@
 import { Module } from "@nestjs/common";
 import { InjectConnection, MongooseModule } from "@nestjs/mongoose";
 import { Connection } from "mongoose";
+import { mongoUri } from "../../../kidify-api/src/libs/runtime";
 
 @Module({
   imports: [
     MongooseModule.forRootAsync({
       useFactory: () => ({
-        uri:
-          process.env.NODE_ENV === "production"
-            ? process.env.MONGO_PROD
-            : process.env.MONGO_DEV,
+        uri: mongoUri(),
+        autoIndex: process.env.NODE_ENV !== "production",
+        autoCreate: process.env.NODE_ENV !== "production",
+        serverSelectionTimeoutMS: 10000,
+        retryAttempts: 3,
+        retryDelay: 1000,
       }),
     }),
   ],

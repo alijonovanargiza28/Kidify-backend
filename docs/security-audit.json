@@ -1,0 +1,882 @@
+{
+  "date": "2026-10-14",
+  "backend": {
+    "tool": "npm audit --omit=dev",
+    "before": {
+      "info": 0,
+      "low": 1,
+      "moderate": 12,
+      "high": 16,
+      "critical": 0,
+      "total": 29
+    },
+    "after": {
+      "info": 0,
+      "low": 0,
+      "moderate": 11,
+      "high": 9,
+      "critical": 0,
+      "total": 20
+    },
+    "packages": {
+      "@apollo/server": {
+        "name": "@apollo/server",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          "@graphql-tools/schema",
+          {
+            "source": 1115452,
+            "name": "@apollo/server",
+            "dependency": "@apollo/server",
+            "title": "Apollo Server: Browser bug allows for bypass of XS-Search (read-only Cross-Site Request Forgery) prevention",
+            "url": "https://github.com/advisories/GHSA-9q82-xgwf-vj6h",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-200"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<5.5.0"
+          },
+          "uuid"
+        ],
+        "effects": [
+          "@apollo/server-plugin-landing-page-graphql-playground",
+          "@nestjs/apollo"
+        ],
+        "range": "<=5.4.0",
+        "nodes": [
+          "node_modules/@apollo/server"
+        ],
+        "fixAvailable": {
+          "name": "@apollo/server",
+          "version": "5.5.1",
+          "isSemVerMajor": true
+        }
+      },
+      "@apollo/server-plugin-landing-page-graphql-playground": {
+        "name": "@apollo/server-plugin-landing-page-graphql-playground",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          "@apollo/server"
+        ],
+        "effects": [
+          "@nestjs/apollo"
+        ],
+        "range": "*",
+        "nodes": [
+          "node_modules/@apollo/server-plugin-landing-page-graphql-playground"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/apollo",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@graphql-tools/merge": {
+        "name": "@graphql-tools/merge",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          "@graphql-tools/utils"
+        ],
+        "effects": [
+          "@graphql-tools/schema",
+          "@nestjs/graphql"
+        ],
+        "range": "<=9.2.3-alpha-20260811213401-1eff5799faeb287f78dcafd6415e2afe144cee07",
+        "nodes": [
+          "node_modules/@graphql-tools/merge",
+          "node_modules/@nestjs/graphql/node_modules/@graphql-tools/merge"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@graphql-tools/schema": {
+        "name": "@graphql-tools/schema",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          "@graphql-tools/merge",
+          "@graphql-tools/utils"
+        ],
+        "effects": [
+          "@nestjs/graphql"
+        ],
+        "range": "<=10.1.0-alpha-20260811213401-1eff5799faeb287f78dcafd6415e2afe144cee07",
+        "nodes": [
+          "node_modules/@graphql-tools/schema",
+          "node_modules/@nestjs/graphql/node_modules/@graphql-tools/schema"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@graphql-tools/utils": {
+        "name": "@graphql-tools/utils",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1241230,
+            "name": "@graphql-tools/utils",
+            "dependency": "@graphql-tools/utils",
+            "title": "GraphQL Tools has prototype pollution in well-established utility function `mergeDeep`",
+            "url": "https://github.com/advisories/GHSA-7mx3-vvmw-hjmv",
+            "severity": "high",
+            "cwe": [
+              "CWE-1321"
+            ],
+            "cvss": {
+              "score": 0,
+              "vectorString": null
+            },
+            "range": "<=12.0.0"
+          }
+        ],
+        "effects": [
+          "@graphql-tools/merge",
+          "@graphql-tools/schema",
+          "@nestjs/graphql"
+        ],
+        "range": "<=12.0.0",
+        "nodes": [
+          "node_modules/@graphql-tools/utils",
+          "node_modules/@nestjs/graphql/node_modules/@graphql-tools/utils"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/apollo": {
+        "name": "@nestjs/apollo",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          "@apollo/server",
+          "@apollo/server-plugin-landing-page-graphql-playground",
+          "@nestjs/core",
+          "@nestjs/graphql"
+        ],
+        "effects": [],
+        "range": "<=14.0.0-next.0",
+        "nodes": [
+          "node_modules/@nestjs/apollo"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/apollo",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/common": {
+        "name": "@nestjs/common",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "file-type"
+        ],
+        "effects": [],
+        "range": "10.4.16 - 10.4.22 || 11.0.16 - 11.1.16 || 12.0.0-alpha.0 - 12.0.0-alpha.7",
+        "nodes": [
+          "node_modules/@nestjs/common"
+        ],
+        "fixAvailable": true
+      },
+      "@nestjs/core": {
+        "name": "@nestjs/core",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/platform-express",
+          "@nestjs/websockets",
+          {
+            "source": 1117063,
+            "name": "@nestjs/core",
+            "dependency": "@nestjs/core",
+            "title": "@nestjs/core Improperly Neutralizes Special Elements in Output Used by a Downstream Component ('Injection')",
+            "url": "https://github.com/advisories/GHSA-36xv-jgw5-4q75",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-74"
+            ],
+            "cvss": {
+              "score": 6.1,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:R/S:C/C:L/I:N/A:L"
+            },
+            "range": "<=11.1.17"
+          }
+        ],
+        "effects": [
+          "@nestjs/apollo",
+          "@nestjs/graphql",
+          "@nestjs/mongoose",
+          "@nestjs/platform-express",
+          "@nestjs/schedule",
+          "@nestjs/websockets"
+        ],
+        "range": "<=11.1.17",
+        "nodes": [
+          "node_modules/@nestjs/core"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/core",
+          "version": "12.1.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/graphql": {
+        "name": "@nestjs/graphql",
+        "severity": "high",
+        "isDirect": true,
+        "via": [
+          "@graphql-tools/merge",
+          "@graphql-tools/schema",
+          "@graphql-tools/utils",
+          "@nestjs/core",
+          "fast-glob"
+        ],
+        "effects": [
+          "@nestjs/apollo"
+        ],
+        "range": "<=14.0.0",
+        "nodes": [
+          "node_modules/@nestjs/graphql"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/mongoose": {
+        "name": "@nestjs/mongoose",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/core"
+        ],
+        "effects": [],
+        "range": "5.1.0 - 10.1.0",
+        "nodes": [
+          "node_modules/@nestjs/mongoose"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/mongoose",
+          "version": "12.0.0",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/platform-express": {
+        "name": "@nestjs/platform-express",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/core"
+        ],
+        "effects": [
+          "@nestjs/core"
+        ],
+        "range": "<=11.0.0-next.4",
+        "nodes": [
+          "node_modules/@nestjs/platform-express"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/platform-express",
+          "version": "12.1.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/platform-socket.io": {
+        "name": "@nestjs/platform-socket.io",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/websockets"
+        ],
+        "effects": [
+          "@nestjs/websockets"
+        ],
+        "range": "<=11.0.0-next.4",
+        "nodes": [
+          "node_modules/@nestjs/platform-socket.io"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/platform-socket.io",
+          "version": "12.1.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/platform-ws": {
+        "name": "@nestjs/platform-ws",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/websockets"
+        ],
+        "effects": [],
+        "range": "<=11.0.0-next.4",
+        "nodes": [
+          "node_modules/@nestjs/platform-ws"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/platform-ws",
+          "version": "12.1.3",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/schedule": {
+        "name": "@nestjs/schedule",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/core"
+        ],
+        "effects": [],
+        "range": "1.0.1 - 4.1.2",
+        "nodes": [
+          "node_modules/@nestjs/schedule"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/schedule",
+          "version": "12.0.2",
+          "isSemVerMajor": true
+        }
+      },
+      "@nestjs/websockets": {
+        "name": "@nestjs/websockets",
+        "severity": "moderate",
+        "isDirect": true,
+        "via": [
+          "@nestjs/core",
+          "@nestjs/platform-socket.io"
+        ],
+        "effects": [
+          "@nestjs/core",
+          "@nestjs/platform-socket.io",
+          "@nestjs/platform-ws"
+        ],
+        "range": "<=11.0.0-next.4",
+        "nodes": [
+          "node_modules/@nestjs/websockets"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/websockets",
+          "version": "12.1.3",
+          "isSemVerMajor": true
+        }
+      },
+      "braces": {
+        "name": "braces",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1240992,
+            "name": "braces",
+            "dependency": "braces",
+            "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+            "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+            "severity": "high",
+            "cwe": [
+              "CWE-674"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:H"
+            },
+            "range": "<=3.0.3"
+          }
+        ],
+        "effects": [
+          "micromatch"
+        ],
+        "range": "*",
+        "nodes": [
+          "node_modules/braces"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "fast-glob": {
+        "name": "fast-glob",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          "micromatch"
+        ],
+        "effects": [
+          "@nestjs/graphql"
+        ],
+        "range": "*",
+        "nodes": [
+          "node_modules/fast-glob"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "file-type": {
+        "name": "file-type",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1114301,
+            "name": "file-type",
+            "dependency": "file-type",
+            "title": "file-type affected by infinite loop in ASF parser on malformed input with zero-size sub-header",
+            "url": "https://github.com/advisories/GHSA-5v7r-6r5c-r473",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-835"
+            ],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": ">=13.0.0 <21.3.1"
+          },
+          {
+            "source": 1114726,
+            "name": "file-type",
+            "dependency": "file-type",
+            "title": "file-type: ZIP Decompression Bomb DoS via [Content_Types].xml entry",
+            "url": "https://github.com/advisories/GHSA-j47w-4g3g-c36v",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-400",
+              "CWE-409"
+            ],
+            "cvss": {
+              "score": 5.3,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:N/A:L"
+            },
+            "range": ">=20.0.0 <=21.3.1"
+          }
+        ],
+        "effects": [
+          "@nestjs/common"
+        ],
+        "range": "13.0.0 - 21.3.1",
+        "nodes": [
+          "node_modules/file-type"
+        ],
+        "fixAvailable": true
+      },
+      "micromatch": {
+        "name": "micromatch",
+        "severity": "high",
+        "isDirect": false,
+        "via": [
+          "braces"
+        ],
+        "effects": [
+          "fast-glob"
+        ],
+        "range": ">=0.2.0",
+        "nodes": [
+          "node_modules/micromatch"
+        ],
+        "fixAvailable": {
+          "name": "@nestjs/graphql",
+          "version": "14.0.3",
+          "isSemVerMajor": true
+        }
+      },
+      "uuid": {
+        "name": "uuid",
+        "severity": "moderate",
+        "isDirect": false,
+        "via": [
+          {
+            "source": 1119441,
+            "name": "uuid",
+            "dependency": "uuid",
+            "title": "uuid: Missing buffer bounds check in v3/v5/v6 when buf is provided",
+            "url": "https://github.com/advisories/GHSA-w5hq-g745-h8pq",
+            "severity": "moderate",
+            "cwe": [
+              "CWE-787",
+              "CWE-1285"
+            ],
+            "cvss": {
+              "score": 7.5,
+              "vectorString": "CVSS:3.1/AV:N/AC:L/PR:N/UI:N/S:U/C:N/I:H/A:N"
+            },
+            "range": "<11.1.1"
+          }
+        ],
+        "effects": [
+          "@apollo/server"
+        ],
+        "range": "<11.1.1",
+        "nodes": [
+          "node_modules/uuid"
+        ],
+        "fixAvailable": {
+          "name": "@apollo/server",
+          "version": "5.5.1",
+          "isSemVerMajor": true
+        }
+      }
+    }
+  },
+  "frontend": {
+    "tool": "yarn audit --groups dependencies --json",
+    "affectedPackageCount": 4,
+    "packages": {
+      "next": {
+        "versions": [
+          "14.2.35"
+        ],
+        "severity": "critical",
+        "advisories": [
+          {
+            "id": "GHSA-9g9p-9gw9-jx7f",
+            "severity": "moderate",
+            "title": "Next.js self-hosted applications vulnerable to DoS via Image Optimizer remotePatterns configuration",
+            "url": "https://github.com/advisories/GHSA-9g9p-9gw9-jx7f",
+            "patchedVersions": ">=15.5.10"
+          },
+          {
+            "id": "GHSA-h25m-26qc-wcjf",
+            "severity": "high",
+            "title": "Next.js HTTP request deserialization can lead to DoS when using insecure React Server Components",
+            "url": "https://github.com/advisories/GHSA-h25m-26qc-wcjf",
+            "patchedVersions": ">=15.0.8"
+          },
+          {
+            "id": "GHSA-ggv3-7p47-pfv8",
+            "severity": "moderate",
+            "title": "Next.js: HTTP request smuggling in rewrites",
+            "url": "https://github.com/advisories/GHSA-ggv3-7p47-pfv8",
+            "patchedVersions": ">=15.5.13"
+          },
+          {
+            "id": "GHSA-3x4c-7xq6-9pq8",
+            "severity": "moderate",
+            "title": "Next.js: Unbounded next/image disk cache growth can exhaust storage",
+            "url": "https://github.com/advisories/GHSA-3x4c-7xq6-9pq8",
+            "patchedVersions": ">=15.5.14"
+          },
+          {
+            "id": "GHSA-q4gf-8mx6-v5v3",
+            "severity": "high",
+            "title": "Next.js has a Denial of Service with Server Components",
+            "url": "https://github.com/advisories/GHSA-q4gf-8mx6-v5v3",
+            "patchedVersions": ">=15.5.15"
+          },
+          {
+            "id": "GHSA-8h8q-6873-q5fj",
+            "severity": "high",
+            "title": "Next.js Vulnerable to Denial of Service with Server Components",
+            "url": "https://github.com/advisories/GHSA-8h8q-6873-q5fj",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-3g8h-86w9-wvmq",
+            "severity": "low",
+            "title": "Next.js's Middleware / Proxy redirects can be cache-poisoned",
+            "url": "https://github.com/advisories/GHSA-3g8h-86w9-wvmq",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-ffhc-5mcf-pf4q",
+            "severity": "moderate",
+            "title": "Next.js vulnerable to cross-site scripting in App Router applications using CSP nonces",
+            "url": "https://github.com/advisories/GHSA-ffhc-5mcf-pf4q",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-vfv6-92ff-j949",
+            "severity": "low",
+            "title": "Next.js vulnerable to cache poisoning via collisions in React Server Component cache-busting",
+            "url": "https://github.com/advisories/GHSA-vfv6-92ff-j949",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-gx5p-jg67-6x7h",
+            "severity": "moderate",
+            "title": "Next.js has cross-site scripting in beforeInteractive scripts with untrusted input",
+            "url": "https://github.com/advisories/GHSA-gx5p-jg67-6x7h",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-h64f-5h5j-jqjh",
+            "severity": "moderate",
+            "title": "Next.js has a Denial of Service in the Image Optimization API",
+            "url": "https://github.com/advisories/GHSA-h64f-5h5j-jqjh",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-c4j6-fc7j-m34r",
+            "severity": "high",
+            "title": "Next.js vulnerable to server-side request forgery in applications using WebSocket upgrades",
+            "url": "https://github.com/advisories/GHSA-c4j6-fc7j-m34r",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-wfc6-r584-vfw7",
+            "severity": "moderate",
+            "title": "Next.js vulnerable to cache poisoning in React Server Component responses",
+            "url": "https://github.com/advisories/GHSA-wfc6-r584-vfw7",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-36qx-fr4f-26g5",
+            "severity": "high",
+            "title": "Next.js has a Middleware / Proxy bypass in Pages Router applications using i18n",
+            "url": "https://github.com/advisories/GHSA-36qx-fr4f-26g5",
+            "patchedVersions": ">=15.5.16"
+          },
+          {
+            "id": "GHSA-m99w-x7hq-7vfj",
+            "severity": "high",
+            "title": "Next.js: Denial of Service in App Router using Server Actions",
+            "url": "https://github.com/advisories/GHSA-m99w-x7hq-7vfj",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-89xv-2m56-2m9x",
+            "severity": "high",
+            "title": "Next.js: Server-Side Request Forgery in Server Actions on custom servers",
+            "url": "https://github.com/advisories/GHSA-89xv-2m56-2m9x",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-68g3-v927-f742",
+            "severity": "moderate",
+            "title": "Next.js: Cache confusion of response bodies for requests with bodies",
+            "url": "https://github.com/advisories/GHSA-68g3-v927-f742",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-4633-3j49-mh5q",
+            "severity": "moderate",
+            "title": "Next.js: Cache confusion of response bodies for requests with bodies containing invalid UTF-8 byte sequences",
+            "url": "https://github.com/advisories/GHSA-4633-3j49-mh5q",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-4c39-4ccg-62r3",
+            "severity": "moderate",
+            "title": "Next.js: Unbounded Server Action payload in Edge runtime",
+            "url": "https://github.com/advisories/GHSA-4c39-4ccg-62r3",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-p9j2-gv94-2wf4",
+            "severity": "high",
+            "title": "Next.js: Server-Side Request Forgery in rewrites via attacker-controlled destination hostname",
+            "url": "https://github.com/advisories/GHSA-p9j2-gv94-2wf4",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-955p-x3mx-jcvp",
+            "severity": "moderate",
+            "title": "Next.js: Unauthenticated disclosure of internal Server Function endpoints",
+            "url": "https://github.com/advisories/GHSA-955p-x3mx-jcvp",
+            "patchedVersions": ">=15.5.21"
+          },
+          {
+            "id": "GHSA-p293-qw3h-jr36",
+            "severity": "critical",
+            "title": "Next.js: Unauthenticated Remote Code Execution on windows-hosted servers",
+            "url": "https://github.com/advisories/GHSA-p293-qw3h-jr36",
+            "patchedVersions": ">=15.5.24"
+          },
+          {
+            "id": "GHSA-2xp9-vwfh-vxw4",
+            "severity": "critical",
+            "title": "Next.js: Unauthenticated Remote Code Execution in Image Optimization API when AVIF files are used",
+            "url": "https://github.com/advisories/GHSA-2xp9-vwfh-vxw4",
+            "patchedVersions": ">=15.5.24"
+          }
+        ]
+      },
+      "swiper": {
+        "versions": [
+          "8.4.7"
+        ],
+        "severity": "critical",
+        "advisories": [
+          {
+            "id": "GHSA-hmx5-qpq5-p643",
+            "severity": "critical",
+            "title": "Prototype pollution in swiper",
+            "url": "https://github.com/advisories/GHSA-hmx5-qpq5-p643",
+            "patchedVersions": ">=12.1.2"
+          }
+        ]
+      },
+      "dompurify": {
+        "versions": [
+          "2.5.9"
+        ],
+        "severity": "moderate",
+        "advisories": [
+          {
+            "id": "GHSA-vhxf-7vqr-mrjg",
+            "severity": "moderate",
+            "title": "DOMPurify allows Cross-site Scripting (XSS)",
+            "url": "https://github.com/advisories/GHSA-vhxf-7vqr-mrjg",
+            "patchedVersions": ">=3.2.4"
+          },
+          {
+            "id": "GHSA-h7mw-gpvr-xq4m",
+            "severity": "moderate",
+            "title": "DOMPurify: FORBID_TAGS bypassed by function-based ADD_TAGS predicate (asymmetry with FORBID_ATTR fix)",
+            "url": "https://github.com/advisories/GHSA-h7mw-gpvr-xq4m",
+            "patchedVersions": ">=3.4.0"
+          },
+          {
+            "id": "GHSA-crv5-9vww-q3g8",
+            "severity": "moderate",
+            "title": "DOMPurify has a SAFE_FOR_TEMPLATES bypass in RETURN_DOM mode",
+            "url": "https://github.com/advisories/GHSA-crv5-9vww-q3g8",
+            "patchedVersions": ">=3.4.0"
+          },
+          {
+            "id": "GHSA-hpcv-96wg-7vj8",
+            "severity": "moderate",
+            "title": "DOMPurify: Cross-realm IN_PLACE sanitization leaves executable markup intact via realm-bound `instanceof` checks",
+            "url": "https://github.com/advisories/GHSA-hpcv-96wg-7vj8",
+            "patchedVersions": ">=3.4.6"
+          },
+          {
+            "id": "GHSA-r47g-fvhr-h676",
+            "severity": "moderate",
+            "title": "DOMPurify: IN_PLACE mode preserves attributes of a clobbered root element, allowing XSS via attacker-controlled root DOM",
+            "url": "https://github.com/advisories/GHSA-r47g-fvhr-h676",
+            "patchedVersions": ">=3.4.6"
+          },
+          {
+            "id": "GHSA-rp9w-3fw7-7cwq",
+            "severity": "moderate",
+            "title": "DOMPurify IN_PLACE Sanitization Bypass via Attached Shadow Root Inside <template>.content",
+            "url": "https://github.com/advisories/GHSA-rp9w-3fw7-7cwq",
+            "patchedVersions": ">=3.4.7"
+          },
+          {
+            "id": "GHSA-cmwh-pvxp-8882",
+            "severity": "moderate",
+            "title": "DOMPurify: Permanent `ALLOWED_ATTR` pollution via `setConfig()` bypassing the hook clone-guard (incomplete fix of the 3.4.7 hook-pollution patch)",
+            "url": "https://github.com/advisories/GHSA-cmwh-pvxp-8882",
+            "patchedVersions": ">=3.4.11"
+          },
+          {
+            "id": "GHSA-vxr8-fq34-vvx9",
+            "severity": "low",
+            "title": "DOMPurify: Trusted Types policy survives `clearConfig()` and can poison later `RETURN_TRUSTED_TYPE` output",
+            "url": "https://github.com/advisories/GHSA-vxr8-fq34-vvx9",
+            "patchedVersions": ">=3.4.9"
+          },
+          {
+            "id": "GHSA-x4vx-rjvf-j5p4",
+            "severity": "low",
+            "title": "DOMPurify: `IN_PLACE` mode trusts attacker-controlled `nodeName` on live non-form nodes, allowing script retention and XSS via attacker-supplied DOM objects",
+            "url": "https://github.com/advisories/GHSA-x4vx-rjvf-j5p4",
+            "patchedVersions": "<0.0.0"
+          },
+          {
+            "id": "GHSA-76mc-f452-cxcm",
+            "severity": "moderate",
+            "title": "DOMPurify: Hook mutation of `data.allowedTags` / `data.allowedAttributes` permanently pollutes `DEFAULT_ALLOWED_TAGS` / `DEFAULT_ALLOWED_ATTR`",
+            "url": "https://github.com/advisories/GHSA-76mc-f452-cxcm",
+            "patchedVersions": ">=3.4.7"
+          },
+          {
+            "id": "GHSA-39q2-94rc-95cp",
+            "severity": "moderate",
+            "title": "DOMPurify's ADD_TAGS function form bypasses FORBID_TAGS due to short-circuit evaluation",
+            "url": "https://github.com/advisories/GHSA-39q2-94rc-95cp",
+            "patchedVersions": ">=3.4.0"
+          },
+          {
+            "id": "GHSA-cjmm-f4jc-qw8r",
+            "severity": "moderate",
+            "title": "DOMPurify ADD_ATTR predicate skips URI validation",
+            "url": "https://github.com/advisories/GHSA-cjmm-f4jc-qw8r",
+            "patchedVersions": ">=3.3.2"
+          },
+          {
+            "id": "GHSA-cj63-jhhr-wcxv",
+            "severity": "moderate",
+            "title": "DOMPurify USE_PROFILES prototype pollution allows event handlers",
+            "url": "https://github.com/advisories/GHSA-cj63-jhhr-wcxv",
+            "patchedVersions": ">=3.3.2"
+          },
+          {
+            "id": "GHSA-h8r8-wccr-v5f2",
+            "severity": "moderate",
+            "title": "DOMPurify is vulnerable to mutation-XSS via Re-Contextualization ",
+            "url": "https://github.com/advisories/GHSA-h8r8-wccr-v5f2",
+            "patchedVersions": ">=3.3.2"
+          },
+          {
+            "id": "GHSA-55q2-fjhq-7xh7",
+            "severity": "moderate",
+            "title": "DOMPurify: IN_PLACE hook removal leaves a detached subtree executable, causing XSS",
+            "url": "https://github.com/advisories/GHSA-55q2-fjhq-7xh7",
+            "patchedVersions": ">=3.4.13"
+          },
+          {
+            "id": "GHSA-c2j3-45gr-mqc4",
+            "severity": "low",
+            "title": "DOMPurify: `CUSTOM_ELEMENT_HANDLING` bypasses `afterSanitizeElements` for allowed custom elements.",
+            "url": "https://github.com/advisories/GHSA-c2j3-45gr-mqc4",
+            "patchedVersions": ">=3.4.12"
+          },
+          {
+            "id": "GHSA-6688-9rhm-gjv2",
+            "severity": "low",
+            "title": "DOMPurify: IN_PLACE returns a force-removed rawtext root whose text carries attacker markup \u2014 pure HTML reparse executes",
+            "url": "https://github.com/advisories/GHSA-6688-9rhm-gjv2",
+            "patchedVersions": ">=3.4.16"
+          }
+        ]
+      },
+      "braces": {
+        "versions": [
+          "3.0.3"
+        ],
+        "severity": "high",
+        "advisories": [
+          {
+            "id": "GHSA-vfj7-8cjw-p6xm",
+            "severity": "high",
+            "title": "braces vulnerable to stack-exhaustion denial of service through deeply nested patterns",
+            "url": "https://github.com/advisories/GHSA-vfj7-8cjw-p6xm",
+            "patchedVersions": "<0.0.0"
+          }
+        ]
+      }
+    },
+    "advisoryInstanceCounts": {
+      "info": 0,
+      "low": 10,
+      "moderate": 37,
+      "high": 9,
+      "critical": 3
+    },
+    "note": "Yarn counts repeated advisory instances; these counts are not directly comparable with npm package rollups."
+  },
+  "reviewedAtUTC": "2026-10-14T17:26:56+00:00"
+}

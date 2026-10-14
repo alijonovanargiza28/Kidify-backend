@@ -59,3 +59,7 @@ report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
 uploads
 # Local model runtime and weights
 .local/
+
+# All deployment credentials stay outside Git
+.env*
+!.env.example

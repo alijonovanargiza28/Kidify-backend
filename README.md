@@ -75,3 +75,7 @@ Production setup: [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 ## Local AI assistant
 
 The chat supports `CHAT_AI_PROVIDER=ollama` with `OLLAMA_BASE_URL=http://127.0.0.1:11434` and `OLLAMA_CHAT_MODEL=qwen2.5:3b` in backend `.env`. Install Ollama on the backend host, run `npm run ai:serve` in a separate terminal, then `npm run ai:pull` once to download the model. Restart the API after changing environment settings. Local inference does not use OpenAI credit; it requires the model files and a running Ollama process. Keep port 11434 private. Product lookup uses the live catalog and order lookup remains scoped to the signed-in customer.
+
+## Production deployment
+
+See [DEPLOYMENT.md](DEPLOYMENT.md) and [PRODUCTION_READINESS.md](PRODUCTION_READINESS.md) for verified checks, deployment configuration and remaining security release blockers.

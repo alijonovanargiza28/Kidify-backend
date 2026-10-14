@@ -26,7 +26,8 @@ import { shapeIntoMongoObjectId } from "../../libs/config";
 
 import { WithoutGuard } from "../auth/guards/without.guard";
 
-import { GraphQLUpload, FileUpload } from "graphql-upload";
+import GraphQLUpload = require("graphql-upload/GraphQLUpload.js");
+import type { FileUpload } from "../../libs/upload";
 
 
 
@@ -106,7 +107,6 @@ export class MemberResolver {
     memberNick: string,
   ): Promise<string> {
     console.log("Query: checkAuth");
-    console.log("memberNick:", memberNick);
 
     return `Hi ${memberNick}`;
   }

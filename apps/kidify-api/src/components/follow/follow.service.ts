@@ -107,7 +107,6 @@ export class FollowService {
 			followerId: search.followerId,
 		};
 
-		console.log('match:', match);
 
 		const result = await this.followModel
 			.aggregate([
@@ -177,7 +176,6 @@ export class FollowService {
 			followingId: search.followingId,
 		};
 
-		console.log('match:', match);
 
 		const result = await this.followModel
 			.aggregate([

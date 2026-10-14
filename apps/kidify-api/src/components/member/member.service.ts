@@ -296,7 +296,6 @@ export class MemberService {
       };
     }
 
-    console.log("match:", match);
 
     const result = await this.memberModel
       .aggregate([
@@ -332,7 +331,6 @@ export class MemberService {
       ])
       .exec();
 
-    console.log("result:", result);
 
     if (!result.length) {
       throw new InternalServerErrorException(Message.NO_DATA_FOUND);
@@ -411,7 +409,6 @@ export class MemberService {
       };
     }
 
-    console.log("match:", match);
 
     const result = await this.memberModel
       .aggregate([
@@ -445,7 +442,6 @@ export class MemberService {
       ])
       .exec();
 
-    console.log("result:", result);
 
     if (!result.length) {
       throw new InternalServerErrorException(Message.NO_DATA_FOUND);

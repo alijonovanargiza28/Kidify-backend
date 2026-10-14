@@ -340,6 +340,11 @@ export class SocketGateway implements OnGatewayInit, OnModuleDestroy {
     }
   }
   onModuleDestroy() {
+    this.server?.clients?.forEach(client => {
+      client.close(1001, "Server restarting");
+      const timer = setTimeout(() => client.terminate(), 1000);
+      timer.unref();
+    });
     clearInterval(this.sweep);
     this.authTimers.forEach(clearTimeout);
     this.streams.forEach((c) => c.abort());

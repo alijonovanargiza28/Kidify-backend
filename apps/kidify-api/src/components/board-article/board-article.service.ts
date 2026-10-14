@@ -171,7 +171,6 @@ export class BoardArticleService {
 			match.memberId = shapeIntoMongoObjectId(input.search.memberId);
 		}
 
-		console.log('match', match);
 
 		const result = await this.boardArticleModel
 			.aggregate([
