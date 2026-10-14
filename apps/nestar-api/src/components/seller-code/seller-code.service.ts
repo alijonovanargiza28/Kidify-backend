@@ -10,11 +10,13 @@ export class SellerCodeService {
 	constructor(@InjectModel('SellerCode') private readonly model: Model<SellerCode>) {}
 	async create(actor: Types.ObjectId, input: SellerCodeInput) {
 		if (input.expiresAt && input.expiresAt <= new Date()) throw new BadRequestException(Message.SELLER_CODE_EXPIRED);
-		return this.model.create({
-			code: input.code ?? randomBytes(18).toString('hex'),
+		const code = input.code?.trim();
+        if (code !== undefined && (code.length < 8 || code.length > 128)) throw new BadRequestException('SELLER_CODE_LENGTH');
+        try { return await this.model.create({
+			code: code ?? randomBytes(18).toString('hex'),
 			expiresAt: input.expiresAt,
 			createdBy: actor,
-		});
+		}); } catch (error) { if (error?.code === 11000) throw new BadRequestException('SELLER_CODE_ALREADY_EXISTS'); throw error; }
 	}
 	async list(input: PageInquiry) {
 		await this.model.updateMany(

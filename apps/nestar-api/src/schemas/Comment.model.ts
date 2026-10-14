@@ -3,6 +3,10 @@ import { CommentGroup, CommentStatus } from '../libs/enums/comment.enum';
 
 const CommentSchema = new Schema(
 	{
+        likeCount: { type: Number, default: 0, min: 0 },
+        verifiedPurchase: { type: Boolean, default: false },
+        replyText: String,
+        replyAuthorId: Schema.Types.ObjectId,
 		commentStatus: {
 			type: String,
 			enum: CommentStatus,

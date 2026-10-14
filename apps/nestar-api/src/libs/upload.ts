@@ -7,7 +7,7 @@ import { Transform } from 'stream';
 import { join } from 'path';
 import { getSerialForImage, validMimeTypes } from './config';
 import { MemberType } from './enums/member.enum';
-const uploadTargets = ['member', 'product', 'brand', 'event', 'article'];
+const uploadTargets = ['member', 'product', 'brand', 'event', 'article', 'review'];
 export async function uploadImage(file: FileUpload, target: string, role: MemberType): Promise<string> {
 	if (!uploadTargets.includes(target)) throw new BadRequestException('INVALID_UPLOAD_TARGET');
 	if (['brand', 'event'].includes(target) && role !== MemberType.ADMIN) throw new ForbiddenException('FORBIDDEN');

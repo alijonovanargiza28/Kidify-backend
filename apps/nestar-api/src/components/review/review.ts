@@ -1,44 +1,64 @@
-import { Field, Float, Int, ObjectType, InputType } from '@nestjs/graphql';
+import { Field, Float, Int, ObjectType, InputType } from "@nestjs/graphql";
 import {
-	IsOptional,
-	IsString,
-	IsNotEmpty,
-	IsInt,
-	IsNumber,
-	Min,
-	Max,
-	MaxLength,
-	ArrayMinSize,
-	ArrayMaxSize,
-	ValidateNested,
-	IsMongoId,
-} from 'class-validator';
-import { Type } from 'class-transformer';
-import { TotalCounter } from '../../libs/dto/member/member';
-import { ReviewGroup, ContentStatus } from '../../libs/enums/marketplace.enum';
-import { PageInquiry } from '../../libs/marketplace';
+  IsArray,
+  Matches,
+  IsOptional,
+  IsString,
+  IsNotEmpty,
+  IsInt,
+  IsNumber,
+  Min,
+  Max,
+  MaxLength,
+  ArrayMinSize,
+  ArrayMaxSize,
+  ValidateNested,
+  IsMongoId,
+} from "class-validator";
+import { Type } from "class-transformer";
+import { TotalCounter } from "../../libs/dto/member/member";
+import { ReviewGroup, ContentStatus } from "../../libs/enums/marketplace.enum";
+import { PageInquiry } from "../../libs/marketplace";
 @InputType()
 export class ReviewInput {
-	@Field(() => ReviewGroup) group!: ReviewGroup;
-	@IsMongoId() @Field(() => String) targetId!: string;
-	@IsMongoId() @Field(() => String) orderId!: string;
-	@IsInt() @Min(1) @Max(5) @Field(() => Int) rating!: number;
-	@IsString() @IsNotEmpty() @MaxLength(3000) @Field(() => String) text!: string;
+  @IsOptional() @IsArray() @ArrayMaxSize(10) @IsString({ each: true })
+  @Matches(/^uploads\/review\/[a-zA-Z0-9-]+\.(jpg|png)$/, { each: true })
+  @Field(() => [String], { nullable: true }) images?: string[];
+  @Field(() => ReviewGroup) group!: ReviewGroup;
+  @IsMongoId() @Field(() => String) targetId!: string;
+  @IsMongoId() @Field(() => String) orderId!: string;
+  @IsInt() @Min(1) @Max(5) @Field(() => Int) rating!: number;
+  @IsString() @IsNotEmpty() @MaxLength(3000) @Field(() => String) text!: string;
 }
 @ObjectType()
 export class Review {
-	@Field(() => String) _id!: string;
-	@Field(() => ReviewGroup) group!: ReviewGroup;
-	@Field(() => String) targetId!: string;
-	@Field(() => String) orderId!: string;
-	@Field(() => String) authorId!: string;
-	@Field(() => Int) rating!: number;
-	@Field(() => String) text!: string;
-	@Field(() => ContentStatus) status!: ContentStatus;
-	@Field(() => Date) createdAt!: Date;
+  @Field(() => String, { nullable: true }) authorNick?: string;
+  @Field(() => String, { nullable: true }) authorImage?: string;
+  @Field(() => [String], { nullable: true }) images?: string[];
+  @Field(() => Boolean, { nullable: true }) verifiedPurchase?: boolean;
+  @Field(() => String, { nullable: true }) replyRole?: string;
+  @Field(() => Int, { defaultValue: 0 }) likeCount!: number;
+  @Field(() => String, { nullable: true }) adminReply?: string;
+  @Field(() => String, { nullable: true }) replyAuthorId?: string;
+  @Field(() => Date, { nullable: true }) replyAt?: Date;
+  @Field(() => String) _id!: string;
+  @Field(() => ReviewGroup) group!: ReviewGroup;
+  @Field(() => String) targetId!: string;
+  @Field(() => String) orderId!: string;
+  @Field(() => String) authorId!: string;
+  @Field(() => Int) rating!: number;
+  @Field(() => String) text!: string;
+  @Field(() => ContentStatus) status!: ContentStatus;
+  @Field(() => Date) createdAt!: Date;
+}
+@ObjectType()
+export class RatingCount {
+  @Field(() => Int) rating!: number;
+  @Field(() => Int) count!: number;
 }
 @ObjectType()
 export class Reviews {
-	@Field(() => [Review]) list!: Review[];
-	@Field(() => [TotalCounter]) metaCounter!: TotalCounter[];
+  @Field(() => [RatingCount], { nullable: true }) ratingBreakdown?: RatingCount[];
+  @Field(() => [Review]) list!: Review[];
+  @Field(() => [TotalCounter]) metaCounter!: TotalCounter[];
 }

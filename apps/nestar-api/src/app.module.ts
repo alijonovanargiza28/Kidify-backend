@@ -27,6 +27,7 @@ import { SocketModule } from './socket/socket.module';
 			driver: ApolloDriver,
 			playground: true,
 			uploads: false,
+            csrfPrevention: true,
 			context: ({ req, res }) => ({ req, res }),
 			autoSchemaFile: true,
 
@@ -39,7 +40,7 @@ import { SocketModule } from './socket/socket.module';
 				};
 
 				console.log('GRAPHQL GLOBAL ERR:', graphqlFormattedError);
-				return graphqlFormattedError;
+				return { ...graphqlFormattedError, path: error.path, extensions: { code: graphqlFormattedError.message === 'UNAUTHORIZED' ? 'UNAUTHENTICATED' : error?.extensions?.code || 'INTERNAL_SERVER_ERROR' } };
 			},
 		}),
 

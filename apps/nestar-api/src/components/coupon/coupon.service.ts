@@ -9,8 +9,8 @@ export function couponDiscount(coupon: Coupon, subtotal: number, now = new Date(
 	if (
 		coupon.status !== CouponStatus.ACTIVE ||
 		(coupon.startAt && coupon.startAt > now) ||
-		(coupon.endAt && coupon.endAt < now) ||
-		(coupon.usageLimit !== undefined && coupon.usedCount >= coupon.usageLimit) ||
+		(coupon.endAt && coupon.endAt <= now) ||
+		(coupon.usageLimit != null && coupon.usedCount >= coupon.usageLimit) ||
 		subtotal < (coupon.minimumOrder ?? 0)
 	)
 		throw new BadRequestException(Message.INVALID_COUPON);
@@ -22,22 +22,25 @@ export function couponDiscount(coupon: Coupon, subtotal: number, now = new Date(
 export class CouponService {
 	constructor(@InjectModel('Coupon') private readonly model: Model<Coupon>) {}
 	validate(input: CouponInput) {
+        if (!input.code?.trim() || input.code.trim().length > 80) throw new BadRequestException('INVALID_COUPON_CODE');
 		if (input.discountType === DiscountType.PERCENT && input.discountValue > 100)
 			throw new BadRequestException(Message.INVALID_COUPON);
-		if (input.startAt && input.endAt && input.startAt > input.endAt)
+		if (input.startAt && input.endAt && input.startAt >= input.endAt)
 			throw new BadRequestException(Message.INVALID_COUPON);
 	}
-	create(actor: Types.ObjectId, input: CouponInput) {
+	async create(actor: Types.ObjectId, input: CouponInput) {
 		this.validate(input);
-		return this.model.create({ ...input, code: input.code.trim().toUpperCase(), createdBy: actor });
+		try { return await this.model.create({ ...input, code: input.code.trim().toUpperCase(), createdBy: actor }); }
+        catch (error) { if (error?.code === 11000) throw new BadRequestException('COUPON_CODE_ALREADY_EXISTS'); throw error; }
 	}
 	async update(id: Types.ObjectId, input: CouponInput) {
 		this.validate(input);
-		const result = await this.model.findByIdAndUpdate(
+		let result;
+        try { result = await this.model.findByIdAndUpdate(
 			id,
 			{ $set: { ...input, code: input.code.trim().toUpperCase() } },
 			{ new: true, runValidators: true },
-		);
+		); } catch (error) { if (error?.code === 11000) throw new BadRequestException('COUPON_CODE_ALREADY_EXISTS'); throw error; }
 		if (!result) throw new NotFoundException('COUPON_NOT_FOUND');
 		return result;
 	}
@@ -61,7 +64,7 @@ export class CouponService {
 				{
 					_id: coupon._id,
 					status: CouponStatus.ACTIVE,
-					...(coupon.usageLimit !== undefined ? { usedCount: { $lt: coupon.usageLimit } } : {}),
+					...(coupon.usageLimit != null ? { usedCount: { $lt: coupon.usageLimit } } : {}),
 				},
 				{ $inc: { usedCount: 1 } },
 				{ session },

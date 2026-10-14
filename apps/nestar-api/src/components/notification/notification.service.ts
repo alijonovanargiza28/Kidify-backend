@@ -56,6 +56,9 @@ export class NotificationService {
 		if (!result) throw new NotFoundException('NOTIFICATION_NOT_FOUND');
 		return result;
 	}
+ async readChat(memberId: Types.ObjectId, peerId: Types.ObjectId) {
+  await this.model.updateMany({ receiverId: memberId, authorId: peerId, notificationGroup: NotificationGroup.MESSAGE, notificationStatus: NotificationStatus.WAIT }, { $set: { notificationStatus: NotificationStatus.READ } });
+ }
 	async readAll(memberId: Types.ObjectId) {
 		await this.model.updateMany(
 			{ receiverId: memberId, notificationStatus: NotificationStatus.WAIT },

@@ -1,3 +1,5 @@
+import OrderSchema from '../../schemas/Order.model';
+import { LikeModule } from '../like/like.module';
 import ProductSchema from '../../schemas/Product.model';
 import BoardArticleSchema from '../../schemas/BoardArticle.model';
 import { Module } from '@nestjs/common';
@@ -13,7 +15,9 @@ import { BoardArticleModule } from '../board-article/board-article.module';
 
 @Module({
 	imports: [
+        LikeModule,
 		MongooseModule.forFeature([
+            { name: 'Order', schema: OrderSchema },
 			{
 				name: 'Product',
 				schema: ProductSchema,

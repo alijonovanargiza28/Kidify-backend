@@ -25,11 +25,11 @@ export class FollowResolver {
 	}
 
 	@UseGuards(AuthGuard)
-	@Mutation(() => Follower)
+	@Mutation(() => Follower, { nullable: true })
 	public async unsubscribe(
 		@Args('input') input: string,
 		@AuthMember('_id') memberId: Types.ObjectId,
-	): Promise<Follower> {
+	): Promise<Follower | null> {
 		console.log('Mutation: unsubscribe');
 
 		const followingId = shapeIntoMongoObjectId(input);

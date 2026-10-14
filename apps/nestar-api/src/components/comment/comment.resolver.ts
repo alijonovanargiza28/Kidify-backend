@@ -1,3 +1,4 @@
+import { Member } from '../../libs/dto/member/member';
 import { Args, Mutation, Query, Resolver } from "@nestjs/graphql";
 import { UseGuards } from "@nestjs/common";
 import mongoose from "mongoose";
@@ -26,13 +27,23 @@ export class CommentResolver {
 
   @UseGuards(AuthGuard)
   @Mutation(() => Comment)
+  likeComment(@Args('commentId') id: string, @AuthMember('_id') memberId: mongoose.Types.ObjectId) {
+    return this.commentService.likeComment(memberId, shapeIntoMongoObjectId(id));
+  }
+  @UseGuards(AuthGuard)
+  @Mutation(() => Comment)
+  replyComment(@Args('commentId') id: string, @Args('text') text: string, @AuthMember() actor: Member) {
+    return this.commentService.replyComment(actor, shapeIntoMongoObjectId(id), text);
+  }
+  @UseGuards(AuthGuard)
+  @Mutation(() => Comment)
   public async createComment(
     @Args("input") input: CommentInput,
-    @AuthMember("_id") memberId: mongoose.Types.ObjectId,
+    @AuthMember() actor: Member,
   ): Promise<Comment> {
     console.log("Mutation: CreateComment");
 
-    return await this.commentService.createComment(memberId, input);
+    return await this.commentService.createComment(shapeIntoMongoObjectId(actor._id), input, actor);
   }
 
   @UseGuards(AuthGuard)

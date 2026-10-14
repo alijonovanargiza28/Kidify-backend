@@ -47,7 +47,7 @@ export class ProductActivityService {
 				facet(input),
 			])
 		)[0];
-		if (!article) data.list = data.list.map(presentProduct);
+		if (!article) data.list = data.list.map((product) => presentProduct({ ...product, ...(!visited ? { meLiked: [{ memberId, likeRefId: product._id, myFavorite: true }] } : {}) }));
 		return data;
 	}
 	async clear(memberId: Types.ObjectId) {

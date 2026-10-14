@@ -5,6 +5,10 @@ import { Member, TotalCounter } from '../member/member';
 
 @ObjectType()
 export class Comment {
+    @Field(() => Int, { nullable: true }) likeCount?: number;
+    @Field(() => Boolean, { nullable: true }) verifiedPurchase?: boolean;
+    @Field(() => String, { nullable: true }) replyText?: string;
+    @Field(() => String, { nullable: true }) replyAuthorId?: string;
 	@Field(() => String)
 	_id!: ObjectId;
 

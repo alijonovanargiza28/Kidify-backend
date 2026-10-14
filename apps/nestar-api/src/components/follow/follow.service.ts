@@ -38,11 +38,14 @@ export class FollowService {
 			throw new InternalServerErrorException(Message.SELF_SUBSCRIPTION_DENIED);
 		}
 
-		return atomic(this.connection, async (session) => {
+        try {
+		return await atomic(this.connection, async (session) => {
 			const seller = await this.members
 				.findOne({ _id: followingId, memberType: 'SELLER', memberStatus: 'ACTIVE' })
 				.session(session);
 			if (!seller) throw new BadRequestException('SELLER_NOT_FOUND');
+			const existing = await this.followModel.findOne({ followerId, followingId }).session(session);
+			if (existing) return existing as Follower;
 			const [result] = await this.followModel.create([{ followerId, followingId }], { session });
 			await this.members.updateOne({ _id: followerId }, { $inc: { memberFollowings: 1 } }, { session });
 			await this.members.updateOne({ _id: followingId }, { $inc: { memberFollowers: 1 } }, { session });
@@ -57,6 +60,14 @@ export class FollowService {
 			);
 			return result as Follower;
 		});
+        } catch (error) {
+            if ((error as { code?: number }).code === 11000) {
+                const existing = await this.followModel.findOne({ followerId, followingId });
+                if (existing) return existing as Follower;
+                throw new BadRequestException('FOLLOW_RETRY');
+            }
+            throw error;
+        }
 	}
 
 	// =========================================================
@@ -80,10 +91,10 @@ export class FollowService {
 	// UNSUBSCRIBE
 	// =========================================================
 
-	public async unsubscribe(followingId: Types.ObjectId, followerId: Types.ObjectId): Promise<Follower> {
+	public async unsubscribe(followingId: Types.ObjectId, followerId: Types.ObjectId): Promise<Follower | null> {
 		return atomic(this.connection, async (session) => {
 			const result = await this.followModel.findOneAndDelete({ followingId, followerId }, { session });
-			if (!result) throw new BadRequestException('FOLLOW_NOT_FOUND');
+			if (!result) return null;
 			await this.members.updateOne(
 				{ _id: followerId, memberFollowings: { $gt: 0 } },
 				{ $inc: { memberFollowings: -1 } },
